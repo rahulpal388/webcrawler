@@ -1,0 +1,14 @@
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <>
+      <div className=" h-screen w-screen flex flex-col ">
+        <div className=" h-12 w-full bg-amber-300  "> NavBar</div>
+        <div className=" flex-1 ">{children}</div>
+      </div>
+    </>
+  );
+}
