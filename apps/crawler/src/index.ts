@@ -1,62 +1,84 @@
+import { HtmlLayerDataExtactor } from "./extractor/htmlLayerDataExtractor";
 import { linkExtractor } from "./extractor/linkExtractor";
+import { requestLayedDataExtractor } from "./extractor/requestLayerDataExtractor";
 import { PageHTMLData, seoDataExtractor } from "./extractor/seoDataExtractor";
-import { fetchWebPage, PageResponseData } from "./fetchWebPage";
-import { IssueSeverityLevel } from "./rules/issueRules";
+import { fetchWebPage } from "./fetchWebPage";
+import { HtmlLayerUrlData } from "./types/htmlData.type";
+import { RequestLayerUrlData } from "./types/requestData.type";
 
+// this store only the url, it has to crawl 
+const frontierQueue = new Set<string>();
 
-const frontierQueue: string[] = [];
-
-
-// storing the information temprory => eventually it goes to db
-type DomainInfoType = {
+type CrawledInfo = {
     domain: string;
-    lastCrawled: Date;
-    // siteHealth: number;
-    // sitePerformance: number;
-    duplicateTitle: false,  // this is site level comparision
-    duplicateMetaDescription: false, // this is site level comparision
-    crawledPages: {
-        path: string;
-        status: number;
-        wordCount: number;
-        externalLink: number;
-        internalLink: number;
-        issue: {
-            name: string;
-            description: string;
-            sereverity: IssueSeverityLevel;
-        }
-        title: string;
-        brokenLink: number;
-        SEOSCore: number
-    },
+    crawledUrlInfo: {
+        requestLayedData: RequestLayerUrlData;
+        htmlLayedData: HtmlLayerUrlData;
+    }[]
 }
 
-// imagesBroken: 0, // broken image require htttp check later
-// imagesUnoptimized: 0, // unoptimized image require size check
-// internalLinks: 0, // other function should extract
-// externalLinks: 0, // other function should extract
 
-export const domainSEOInfo = new Map<string, DomainInfoType>();
+const crawledUrl = new Map<string, CrawledInfo>();
 
 
 
-frontierQueue.push("https://www.hellointerview.com/learn/system-design/problem-breakdowns/web-crawler")
-// frontierQueue.push("https://beatroom.space/")
+
+// frontierQueue.add("https://www.hellointerview.com/learn/system-design/problem-breakdowns/web-crawler")
+// frontierQueue.add("https://beatroom.space/")
+frontierQueue.add("https://raw.githubusercontent.com/")
+// frontierQueue.add("https://github.com/search?q=react")
 
 
-export type PageData = PageHTMLData & PageResponseData
 
-async function crawler(url: string) {
-    const newUrl = new URL(url)
-    const { success, data, html } = await fetchWebPage(newUrl);
+
+
+async function crawlerHandler(crawlUrl: string) {
+    console.log("starting crawling the url")
+    const mainUrl = new URL(crawlUrl);
+    const urlQueue = new Set<string>();
+    await crawler(mainUrl, urlQueue);
+    for (const url of urlQueue) {
+        await crawler(new URL(url), urlQueue);
+    }
+    console.log("url has been crawled")
+}
+
+
+
+
+
+async function crawler(url: URL, urlQueue: Set<string>) {
+    const { success, data } = await fetchWebPage(url);
     if (success) {
-        const { externalLink, internalLink } = linkExtractor(html, url);
-        const seoData = seoDataExtractor(html, newUrl.origin)
+        const requestLayedData = await requestLayedDataExtractor({
+            response: data.response,
+            responseTime: data.responseTime,
+            url
+        })
+
+        console.log(requestLayedData)
+        const htmlLayedData = HtmlLayerDataExtactor(data.html, url);
+        console.log(htmlLayedData)
+        // if (crawledUrl.has(url.origin)) {
+        //     crawledUrl.get(url.origin)?.crawledUrlInfo.push({
+        //         requestLayedData,
+        //         htmlLayedData
+        //     })
+        // } else {
+        //     crawledUrl.set(url.origin, {
+        //         domain: url.origin,
+        //         crawledUrlInfo: [{
+        //             requestLayedData,
+        //             htmlLayedData
+        //         }]
+        //     })
+        // }
     }
 
 }
 
 
-
-crawler(frontierQueue[0] || "");
+const urlToCrawl = frontierQueue.values().next().value
+if (urlToCrawl) {
+    crawlerHandler(urlToCrawl)
+}
