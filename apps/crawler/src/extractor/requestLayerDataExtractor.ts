@@ -1,6 +1,6 @@
 import { RequestLayerUrlData } from "@/types/requestData.type";
 import { getHeaders } from "@/utils/getHeaders";
-import { getNetworkTimings } from "@/utils/export function getgetNetworkTimings";
+import { getNetworkTimings } from "@/utils/getNetworkTimings";
 import axios from "axios";
 import https from "https"
 import tls from "tls"

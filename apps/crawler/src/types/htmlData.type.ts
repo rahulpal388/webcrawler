@@ -46,7 +46,6 @@ export type HtmlLayerUrlData = {
 
     content: {
         wordCount: number
-        text: string
         thinContent: boolean
     }
 
@@ -59,11 +58,9 @@ export type HtmlLayerUrlData = {
     links: {
         internal: string[]
         external: string[]
-        broken: string[]
 
         internalCount: number
         externalCount: number
-        brokenCount: number
     }
 
     structuredData: {
@@ -73,3 +70,64 @@ export type HtmlLayerUrlData = {
 
 }
 
+
+export type HtmlLayerReport = {
+    metaTags: {
+        missingTitles: number;
+        duplicateTitles: number;
+        longTitles: number;
+        shortTitles: number;
+
+        missingDescriptions: number;
+        duplicateDescriptions: number;
+        longDescriptions: number;
+        shortDescriptions: number;
+    }
+
+    canonical: {
+        missingCanonical: number;
+        multipleCanonicals: number;
+        invalidCanonical: number;
+        nonSelfCanonical: number;
+    }
+
+    headings: {
+        pagesWithoutH1: number;
+        pagesWithMultipleH1: number;
+        pagesWithoutH2: number;
+    }
+
+    contentQuality: {
+        averageWordCount: number;
+        thinContentPages: number;
+        duplicateContentPages: number;
+    }
+
+    images: {
+        totalImages: number;
+        imagesMissingAlt: number;
+        largeImages: number;
+    }
+
+    internalLinks: {
+        totalInternalLinks: number;
+        orphanPages: number;
+        avgInternalLinksPerPage: number;
+    }
+
+    externalLinks: {
+        totalExternalLinks: number;
+        pagesWithExternalLinks: number;
+    }
+
+    brokenLinks: {
+        internalBrokenLinks: number;
+        externalBrokenLinks: number;
+        pagesWithBrokenLinks: number;
+    }
+
+    structuredData: {
+        pagesWithSchema: number;
+        schemaTypes: string[]
+    }
+}
