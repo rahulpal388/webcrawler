@@ -5,6 +5,7 @@ import { fetchWebPage } from "./fetchWebPage";
 import { HtmlLayerUrlData } from "./types/htmlData.type";
 import { RequestLayerUrlData } from "./types/requestData.type";
 import { analyseDomainUrls } from "./utils/analyseDomainUrls";
+import { checkIssues } from "./utils/checkIssues";
 
 // this store only the url, it has to crawl 
 const frontierQueue = new Set<string>();
@@ -12,6 +13,7 @@ const frontierQueue = new Set<string>();
 export type CrawledInfo = {
     domain: string;
     crawledUrlInfo: {
+        path: string;
         requestLayedData: RequestLayerUrlData;
         htmlLayedData: HtmlLayerUrlData;
     }[]
@@ -36,18 +38,27 @@ async function crawlerHandler(crawlUrl: string) {
     console.log("starting crawling the url")
     const mainUrl = new URL(crawlUrl);
     const { internalLinks } = await crawler(mainUrl);
+    console.log(`done ${crawlUrl}`)
 
-    const urlQueue = new Set<string>(internalLinks.slice(0, 2));
+    const urlQueue = new Set<string>(internalLinks.slice(0, 6));
     console.log(`total url to crawl is ${urlQueue.size}`)
     let i = 1;
     for (const url of urlQueue) {
         console.log(`${i} ${url}`)
         await crawler(new URL(url));
         i++;
+        console.log(`done ${i} ${url}`)
     }
     console.log("url has been crawled")
-    console.log(JSON.stringify([...crawledUrl], null, 2));
-    // analyseDomainUrls();
+    // console.log(JSON.stringify([...crawledUrl], null, 2));
+    console.log("these are the issues")
+    const origin = new URL(crawlUrl).origin;
+    const pageResult = crawledUrl.get(origin);
+    if (pageResult) {
+
+        checkIssues(pageResult);
+    }
+
 }
 
 
@@ -74,6 +85,7 @@ async function crawler(url: URL): Promise<{
     const htmlLayedData = HtmlLayerDataExtactor(data.html, url);
     if (crawledUrl.has(url.origin)) {
         crawledUrl.get(url.origin)?.crawledUrlInfo.push({
+            path: url.pathname,
             requestLayedData,
             htmlLayedData
         })
@@ -81,6 +93,7 @@ async function crawler(url: URL): Promise<{
         crawledUrl.set(url.origin, {
             domain: url.origin,
             crawledUrlInfo: [{
+                path: url.pathname,
                 requestLayedData,
                 htmlLayedData
             }]

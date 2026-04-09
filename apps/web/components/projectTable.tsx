@@ -111,9 +111,9 @@ const projects: Project[] = [
 export function ProjectTable() {
   return (
     <>
-      <div className="mt-4 px-8 py-8 ">
-        <table className=" w-full border-collapse  ">
-          <thead className="  bg-neutral-500  ">
+      <div className="mt-4 px-4 py-8  ">
+        <table className=" w-full border-collapse border border-border rounded-lg overflow-hidden shadow-md ">
+          <thead className="  bg-background-light   ">
             <tr>
               <th className="p-3 text-left">S.No</th>
               <th className="p-3 text-left">Domain</th>
@@ -127,14 +127,14 @@ export function ProjectTable() {
           {projects.map((x, idx) => (
             <tbody
               key={idx + 1}
-              className=" border-b bg-neutral-200  hover:bg-neutral-50 "
+              className=" border-b  "
             >
               <tr>
                 <td className="p-3">{idx + 1}</td>
                 <td className="p-3">
                   <Link
                     href={`/project/${x.domain}`}
-                    className=" flex gap-2 items-center "
+                    className=" flex gap-3 items-center "
                   >
                     {x.domain}
                     <ExternalLink size={12} />

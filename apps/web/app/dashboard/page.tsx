@@ -1,6 +1,6 @@
-import { Button } from "@repo/ui/button";
-import { InfoCard } from "@repo/ui/infoCard";
+import { Button } from "@repo/ui/components/button";
 import { ProjectTable } from "../../components/projectTable";
+import { InfoCard } from "@repo/ui/components/infoCard";
 
 const value: { title: string; value: number }[] = [
   {
@@ -24,14 +24,14 @@ const value: { title: string; value: number }[] = [
 export default function DashboardPage() {
   return (
     <>
-      <div className="h-full w-full  px-8 py-12 ">
-        <div className="w-full  flex items-center justify-between gap-8 ">
+      <div className="h-full w-full  px-8 py-12   ">
+        <div className="w-full   flex items-center justify-between gap-8 ">
           {value.map((x, idx) => (
             <InfoCard
               key={idx}
               title={x.title}
               value={x.value}
-              className="w-full"
+              className="w-full h-28 "
             />
           ))}
         </div>
