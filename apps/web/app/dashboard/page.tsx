@@ -1,6 +1,9 @@
+'use client'
 import { Button } from "@repo/ui/components/button";
 import { ProjectTable } from "../../components/projectTable";
 import { InfoCard } from "@repo/ui/components/infoCard";
+import { useModal } from "../context/modalContext";
+import { Plus } from "lucide-react";
 
 const value: { title: string; value: number }[] = [
   {
@@ -22,6 +25,7 @@ const value: { title: string; value: number }[] = [
 ];
 
 export default function DashboardPage() {
+  const { openModal } = useModal();
   return (
     <>
       <div className="h-full w-full  px-8 py-12   ">
@@ -35,10 +39,17 @@ export default function DashboardPage() {
             />
           ))}
         </div>
-        <div className=" mt-8 w-full border border-neutral-200/40 rounded-lg shadow-2xl ">
+        <div className=" mt-8 py-4 w-full border border-neutral-200/40 rounded-lg shadow-2xl ">
           <div className=" flex items-center justify-between px-4 ">
             <h2 className=" text-3xl font-semibold ">Project</h2>
-            <Button appName="">Create new Project</Button>
+            <Button
+              variant="primary"
+              onClick={() => {
+                openModal("create-project");
+              }}
+            >
+              <Plus />
+              Create new Project</Button>
           </div>
           <div>
             <ProjectTable />

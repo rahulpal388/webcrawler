@@ -5,15 +5,15 @@ import { SearchBar } from "./searchBar";
 export function NavBar() {
 
     return <>
-        <div className="  flex items-center justify-between px-8 py-4  border-b border-border ">
+        <div className=" h-full flex items-center justify-between px-8   border-b border-border ">
             <div>
-                <p className=" text-xl font-semibold italic tracking-wide  ">RankLens</p>
+                <p className=" text-xl font-semibold italic tracking-wide  ">Crawllytics</p>
             </div>
             <div>
                 <SearchBar />
             </div>
-            <div>
-                <Button appName="login">Login</Button>
+            <div className=" flex gap-4  ">
+                <Button variant="secondary" >Login</Button>
             </div>
         </div>
     </>

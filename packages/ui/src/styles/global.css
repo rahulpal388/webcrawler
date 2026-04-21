@@ -2,7 +2,7 @@
 
 /* runtime variable */
 :root {
-    --primary: orange;
+    /* --primary: oklch(0.5403 0.2157 261.74); */
 }
 
 /* tailwind token */
@@ -22,7 +22,7 @@
     --color-border: #d1d5db;
 
     /* primary colors */
-    --color-primary: #ff6b35;
+    --color-primary: oklch(0.5403 0.2157 261.74);
     --color-primary-hover: #ff5722;
 
     /* danger colors */

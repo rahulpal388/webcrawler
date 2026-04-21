@@ -13,31 +13,38 @@ export async function fetchWebPage(url: URL): Promise<{
     data: null,
 }> {
 
+    try {
 
 
-    const start = Date.now();
-    const response = await axios.get(url.toString(), {
-        headers: {
-            "User-Agent": "crawler/1.0"
-        },
-    });
-    const end = Date.now();
+        const start = Date.now();
+        const response = await axios.get(url.toString(), {
+            headers: {
+                "User-Agent": "crawler/1.0"
+            },
+        });
+        const end = Date.now();
 
-    const contentType = response.headers["content-type"] as string;
-    if (!contentType.includes("text/html")) {
+        const contentType = response.headers["content-type"] as string;
+        if (!contentType.includes("text/html")) {
+            return {
+                success: false,
+                data: null,
+            }
+        }
+
+        return {
+            success: true,
+            data: {
+                html: response.data,
+                responseTime: end - start,
+                response
+            }
+        }
+    } catch (error) {
         return {
             success: false,
-            data: null,
-        }
-    }
-
-    return {
-        success: true,
-        data: {
-            html: response.data,
-            responseTime: end - start,
-            response
-        }
+            data: null
+        };
     }
 
 

@@ -6,17 +6,21 @@ import { HtmlLayerUrlData } from "./types/htmlData.type";
 import { RequestLayerUrlData } from "./types/requestData.type";
 import { analyseDomainUrls } from "./utils/analyseDomainUrls";
 import { checkIssues } from "./utils/checkIssues";
+import { checkSEO } from "./utils/checkUrlSEO";
 
 // this store only the url, it has to crawl 
 const frontierQueue = new Set<string>();
 
+
+export type CrawledUrlInfo = {
+    path: string;
+    requestLayedData: RequestLayerUrlData;
+    htmlLayedData: HtmlLayerUrlData;
+}
+
 export type CrawledInfo = {
     domain: string;
-    crawledUrlInfo: {
-        path: string;
-        requestLayedData: RequestLayerUrlData;
-        htmlLayedData: HtmlLayerUrlData;
-    }[]
+    crawledUrlInfo: CrawledUrlInfo[]
 }
 
 
@@ -25,9 +29,9 @@ const crawledUrl = new Map<string, CrawledInfo>();
 const MAX_CRAWL_DEPTH = 1;
 
 
-frontierQueue.add("https://www.hellointerview.com/learn/system-design/problem-breakdowns/web-crawler")
+// frontierQueue.add("https://www.hellointerview.com/learn/system-design/problem-breakdowns/web-crawler")
 // frontierQueue.add("https://beatroom.space/")
-// frontierQueue.add("https://raw.githubusercontent.com/")
+frontierQueue.add("https://raw.githubusercontent.com/")
 // frontierQueue.add("https://github.com/search?q=react")
 
 
@@ -55,8 +59,9 @@ async function crawlerHandler(crawlUrl: string) {
     const origin = new URL(crawlUrl).origin;
     const pageResult = crawledUrl.get(origin);
     if (pageResult) {
-
         checkIssues(pageResult);
+        checkSEO(pageResult);
+
     }
 
 }

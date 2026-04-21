@@ -1,3 +1,6 @@
+import { ProjectComponent } from "../../../components/projectComponent";
+import { SideBar } from "../../../components/sidebar";
+
 export default async function ProjectPage({
   params,
 }: {
@@ -7,8 +10,8 @@ export default async function ProjectPage({
 
   return (
     <>
-      <div className="h-screen w-screen flex items-center justify-center">
-        <h1 className=" text-2xl ">project name is {slug}</h1>
+      <div className="h-full w-full flex ">
+        <ProjectComponent />
       </div>
     </>
   );

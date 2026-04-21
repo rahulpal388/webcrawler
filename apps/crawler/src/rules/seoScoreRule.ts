@@ -1,163 +1,164 @@
 import { HtmlLayerUrlData } from "@/types/htmlData.type";
+import { CrawledUrlInfo } from "..";
 
 
 
 type SEORulesType = {
     name: string;
     point: number;
-    check: (data: HtmlLayerUrlData) => boolean
+    check: (data: CrawledUrlInfo) => boolean
 }
 
 
-// const SEORules: SEORulesType[] = [
+export const SEORules: SEORulesType[] = [
 
-//     // Technical SEO
+    // Technical SEO
 
-//     {
-//         name: "HTTPS enabled",
-//         point: 5,
-//         check: (data) => data.protocol === "https"
-//     },
+    {
+        name: "HTTPS enabled",
+        point: 5,
+        check: (data) => data.requestLayedData.protocol === "https"
+    },
 
-//     {
-//         name: "Valid status code",
-//         point: 5,
-//         check: (data) => data.statusCode === 200
-//     },
+    {
+        name: "Valid status code",
+        point: 5,
+        check: (data) => data.requestLayedData.statusCode === 200
+    },
 
-//     {
-//         name: "Canonical tag present",
-//         point: 3,
-//         check: (data) => !!data.canonical
-//     },
+    {
+        name: "Canonical tag present",
+        point: 3,
+        check: (data) => data.htmlLayedData.canonical.valid
+    },
 
-//     {
-//         name: "Robots not blocking indexing",
-//         point: 3,
-//         check: (data) => data.robots !== "noindex"
-//     },
+    {
+        name: "Robots not blocking indexing",
+        point: 3,
+        check: (data) => data.htmlLayedData.meta.robots.indexAllowed
+    },
 
-//     {
-//         name: "Page size acceptable",
-//         point: 2,
-//         check: (data) => data.pageSize < 1000000
-//     },
+    // {
+    //     name: "Page size acceptable",
+    //     point: 2,
+    //     check: (data) => data.requestLayedData. < 1000000
+    // },
 
-//     {
-//         name: "Response time acceptable",
-//         point: 2,
-//         check: (data) => data.responseTime < 2000
-//     },
-
-
-//     // On-Page SEO
-
-//     {
-//         name: "Title exists",
-//         point: 6,
-//         check: (data) => !!data.title
-//     },
-
-//     {
-//         name: "Title length valid",
-//         point: 3,
-//         check: (data) =>
-//             !!data.title && data.title.length >= 30 && data.title.length <= 60
-//     },
-
-//     {
-//         name: "Meta description exists",
-//         point: 5,
-//         check: (data) => !!data.description
-//     },
-
-//     {
-//         name: "Meta description length valid",
-//         point: 2,
-//         check: (data) =>
-//             !!data.description &&
-//             data.description.length >= 50 &&
-//             data.description.length <= 160
-//     },
-
-//     {
-//         name: "Single H1 tag",
-//         point: 6,
-//         check: (data) => data.h1.length === 1
-//     },
-
-//     {
-//         name: "Has H2 headings",
-//         point: 2,
-//         check: (data) => data.h2.length > 0
-//     },
+    {
+        name: "Response time acceptable",
+        point: 2,
+        check: (data) => data.requestLayedData.networkTimings.totalResponseTime < 2000
+    },
 
 
-//     // Content Quality
+    // On-Page SEO
 
-//     {
-//         name: "Content length sufficient",
-//         point: 6,
-//         check: (data) => data.wordCount >= 300
-//     },
+    {
+        name: "Title exists",
+        point: 6,
+        check: (data) => !!data.htmlLayedData.meta.title.value
+    },
 
-//     {
-//         name: "Strong content depth",
-//         point: 4,
-//         check: (data) => data.wordCount >= 800
-//     },
+    {
+        name: "Title length valid",
+        point: 3,
+        check: (data) =>
+            !!data.htmlLayedData.meta.title.value && data.htmlLayedData.meta.title.value.length >= 30 && data.htmlLayedData.meta.title.value.length <= 60
+    },
 
+    {
+        name: "Meta description exists",
+        point: 5,
+        check: (data) => !!data.htmlLayedData.meta.description.value
+    },
 
-//     // Images
+    {
+        name: "Meta description length valid",
+        point: 2,
+        check: (data) =>
+            !!data.htmlLayedData.meta.description.value &&
+            data.htmlLayedData.meta.description.value.length >= 50 &&
+            data.htmlLayedData.meta.description.value.length <= 160
+    },
 
-//     {
-//         name: "Images have alt attributes",
-//         point: 4,
-//         check: (data) =>
-//             data.imagesTotal === 0 ||
-//             data.imagesMissingAlt / data.imagesTotal < 0.3
-//     },
+    {
+        name: "Single H1 tag",
+        point: 6,
+        check: (data) => data.htmlLayedData.headings.h1.length === 1
+    },
 
-
-//     // Internal Linking
-
-//     // {
-//     //     name: "Internal links exist",
-//     //     point: 4,
-//     //     check: (data) => data.internalLinks > 0
-//     // },
-
-//     // {
-//     //     name: "Balanced internal links",
-//     //     point: 2,
-//     //     check: (data) => data.internalLinks >= 3
-//     // },
-
-//     // {
-//     //     name: "External links present",
-//     //     point: 1,
-//     //     check: (data) => data.externalLinks > 0
-//     // },
+    {
+        name: "Has H2 headings",
+        point: 2,
+        check: (data) => data.htmlLayedData.headings.h2.length > 0
+    },
 
 
-//     // URL Structure
+    // Content Quality
 
-//     {
-//         name: "URL length acceptable",
-//         point: 2,
-//         check: (data) => data.urlLength < 100
-//     },
+    {
+        name: "Content length sufficient",
+        point: 6,
+        check: (data) => data.htmlLayedData.content.wordCount >= 300
+    },
+
+    {
+        name: "Strong content depth",
+        point: 4,
+        check: (data) => data.htmlLayedData.content.wordCount >= 800
+    },
+
+
+    // Images
+
+    {
+        name: "Images have alt attributes",
+        point: 4,
+        check: (data) =>
+            data.htmlLayedData.images.total === 0 ||
+            data.htmlLayedData.images.missingAlt / data.htmlLayedData.images.total < 0.3
+    },
+
+
+    // Internal Linking
+
+    {
+        name: "Internal links exist",
+        point: 4,
+        check: (data) => data.htmlLayedData.links.externalCount > 0
+    },
+
+    {
+        name: "Balanced internal links",
+        point: 2,
+        check: (data) => data.htmlLayedData.links.internalCount >= 3
+    },
+
+    {
+        name: "External links present",
+        point: 1,
+        check: (data) => data.htmlLayedData.links.externalCount > 0
+    },
+
+
+    // URL Structure
+
+    {
+        name: "URL length acceptable",
+        point: 2,
+        check: (data) => data.requestLayedData.url.length < 100
+    },
 
 
 
-//     // Crawl Structure
+    // Crawl Structure
 
-//     {
-//         name: "Crawl depth acceptable",
-//         point: 2,
-//         check: (data) => data.crawlDepth <= 3
-//     }
-// ];
+    // {
+    //     name: "Crawl depth acceptable",
+    //     point: 2,
+    //     check: (data) => data.htmlLayedData.crawlDepth <= 3
+    // }
+];
 
 
 

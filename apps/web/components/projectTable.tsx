@@ -111,7 +111,7 @@ const projects: Project[] = [
 export function ProjectTable() {
   return (
     <>
-      <div className="mt-4 px-4 py-8  ">
+      <div className="px-4 py-8  ">
         <table className=" w-full border-collapse border border-border rounded-lg overflow-hidden shadow-md ">
           <thead className="  bg-background-light   ">
             <tr>
