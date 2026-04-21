@@ -43,7 +43,7 @@ export function checkIssues(crawledUrls: CrawledInfo) {
     }
 
     // console.log(issues)
-    // console.log(JSON.stringify([...issues], null, 2));
+    console.log(JSON.stringify([...issues], null, 2));
 
 
 }

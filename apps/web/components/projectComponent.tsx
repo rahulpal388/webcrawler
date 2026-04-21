@@ -16,19 +16,21 @@ export function ProjectComponent() {
     const [active, setActive] = useState<ActiveSidebar>("Overview")
 
     return <>
-        <div className="  w-[12rem] h-full border-r border-border  ">
-            <SideBar active={active} setActive={setActive} />
-        </div>
-        <div className=" flex-1  ">
-            {active === "Overview" && <Overview />}
-            {active === "Content SEO" && <ContentSeo />}
-            {active === "Issues" && <Issues />}
-            {active === "Crawl depth" && <CrawledDepth />}
-            {active === "Crawled Pages" && <CrawledPages />}
-            {active === "Internal Links" && <InternalLinks />}
-            {active === "Report" && <Report />}
-            {active === "Site structure" && <SiteStructure />}
-            {active === "Technical SEO" && <TechnicalSeo />}
+        <div className="flex h-full w-full ">
+            <div className="  w-[12rem]  border-r border-border   ">
+                <SideBar active={active} setActive={setActive} />
+            </div>
+            <div className=" flex-1 overflow-y-auto     ">
+                {active === "Overview" && <Overview />}
+                {active === "Content SEO" && <ContentSeo />}
+                {active === "Issues" && <Issues />}
+                {active === "Crawl depth" && <CrawledDepth />}
+                {active === "Crawled Pages" && <CrawledPages />}
+                {active === "Internal Links" && <InternalLinks />}
+                {active === "Report" && <Report />}
+                {active === "Site structure" && <SiteStructure />}
+                {active === "Technical SEO" && <TechnicalSeo />}
+            </div>
         </div>
     </>
 }

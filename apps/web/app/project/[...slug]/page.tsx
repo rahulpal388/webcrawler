@@ -1,5 +1,5 @@
 import { ProjectComponent } from "../../../components/projectComponent";
-import { SideBar } from "../../../components/sidebar";
+
 
 export default async function ProjectPage({
   params,
@@ -10,7 +10,7 @@ export default async function ProjectPage({
 
   return (
     <>
-      <div className="h-full w-full flex ">
+      <div className="h-full w-full flex  ">
         <ProjectComponent />
       </div>
     </>

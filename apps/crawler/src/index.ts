@@ -51,10 +51,10 @@ async function crawlerHandler(crawlUrl: string) {
         console.log(`${i} ${url}`)
         await crawler(new URL(url));
         i++;
-        console.log(`done ${i} ${url}`)
+        console.log(`done ${i - 1} ${url}`)
     }
     console.log("url has been crawled")
-    // console.log(JSON.stringify([...crawledUrl], null, 2));
+    console.log(JSON.stringify([...crawledUrl], null, 2));
     console.log("these are the issues")
     const origin = new URL(crawlUrl).origin;
     const pageResult = crawledUrl.get(origin);

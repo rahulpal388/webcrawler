@@ -1,7 +1,9 @@
+
+
 export function Issues() {
     return <>
         <div>
-            Issues
+            issues
         </div>
     </>
 }
