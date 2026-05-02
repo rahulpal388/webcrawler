@@ -1,7 +1,9 @@
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
+import { DataTable } from "@repo/ui/components/table"
 
 type Project = {
+  id: number;
   domain: string;
   pages: number;
   brokenLinks: number;
@@ -9,8 +11,23 @@ type Project = {
   seoScore: number;
   lastCrawled: string;
 };
+
+const columns: Array<{
+  key: keyof Project;
+  heading: string;
+  render?: (value: Project[keyof Project]) => React.ReactNode
+}> = [
+    { key: "domain", heading: "Domain", render: (value) => <Link href={`/project/${value}`} className=" flex gap-3 items-center ">{value} <ExternalLink size={12} /></Link> },
+    { key: "pages", heading: "Pages" },
+    { key: "issues", heading: "Issues" },
+    { key: "brokenLinks", heading: "Broken Links" },
+    { key: "seoScore", heading: "SEO Score" },
+    { key: "lastCrawled", heading: "Last Crawled" },
+  ]
+
 const projects: Project[] = [
   {
+    id: 1,
     domain: "example.com",
     pages: 120,
     brokenLinks: 3,
@@ -19,6 +36,7 @@ const projects: Project[] = [
     lastCrawled: "2026-04-07",
   },
   {
+    id: 2,
     domain: "myblog.com",
     pages: 45,
     brokenLinks: 1,
@@ -27,6 +45,7 @@ const projects: Project[] = [
     lastCrawled: "2026-04-06",
   },
   {
+    id: 3,
     domain: "store.com",
     pages: 320,
     brokenLinks: 12,
@@ -35,6 +54,7 @@ const projects: Project[] = [
     lastCrawled: "2026-04-05",
   },
   {
+    id: 4,
     domain: "example.com",
     pages: 120,
     brokenLinks: 3,
@@ -43,6 +63,7 @@ const projects: Project[] = [
     lastCrawled: "2026-04-07",
   },
   {
+    id: 5,
     domain: "myblog.com",
     pages: 45,
     brokenLinks: 1,
@@ -51,6 +72,7 @@ const projects: Project[] = [
     lastCrawled: "2026-04-06",
   },
   {
+    id: 6,
     domain: "store.com",
     pages: 320,
     brokenLinks: 12,
@@ -59,6 +81,7 @@ const projects: Project[] = [
     lastCrawled: "2026-04-05",
   },
   {
+    id: 7,
     domain: "example.com",
     pages: 120,
     brokenLinks: 3,
@@ -67,6 +90,7 @@ const projects: Project[] = [
     lastCrawled: "2026-04-07",
   },
   {
+    id: 8,
     domain: "myblog.com",
     pages: 45,
     brokenLinks: 1,
@@ -75,6 +99,7 @@ const projects: Project[] = [
     lastCrawled: "2026-04-06",
   },
   {
+    id: 9,
     domain: "store.com",
     pages: 320,
     brokenLinks: 12,
@@ -83,6 +108,8 @@ const projects: Project[] = [
     lastCrawled: "2026-04-05",
   },
   {
+    id: 10,
+
     domain: "example.com",
     pages: 120,
     brokenLinks: 3,
@@ -91,6 +118,7 @@ const projects: Project[] = [
     lastCrawled: "2026-04-07",
   },
   {
+    id: 11,
     domain: "myblog.com",
     pages: 45,
     brokenLinks: 1,
@@ -99,6 +127,7 @@ const projects: Project[] = [
     lastCrawled: "2026-04-06",
   },
   {
+    id: 12,
     domain: "store.com",
     pages: 320,
     brokenLinks: 12,
@@ -108,47 +137,14 @@ const projects: Project[] = [
   },
 ];
 
+
+
+
 export function ProjectTable() {
   return (
     <>
       <div className="px-4 py-8  ">
-        <table className=" w-full border-collapse border border-border rounded-lg overflow-hidden shadow-md ">
-          <thead className="  bg-background-light   ">
-            <tr>
-              <th className="p-3 text-left">S.No</th>
-              <th className="p-3 text-left">Domain</th>
-              <th className="p-3 text-left">Pages</th>
-              <th className="p-3 text-left">Issues</th>
-              <th className="p-3 text-left">SEO Scores</th>
-              <th className="p-3 text-left">Broken Links</th>
-              <th className="p-3 text-left">Last Crawled</th>
-            </tr>
-          </thead>
-          {projects.map((x, idx) => (
-            <tbody
-              key={idx + 1}
-              className=" border-b  "
-            >
-              <tr>
-                <td className="p-3">{idx + 1}</td>
-                <td className="p-3">
-                  <Link
-                    href={`/project/${x.domain}`}
-                    className=" flex gap-3 items-center "
-                  >
-                    {x.domain}
-                    <ExternalLink size={12} />
-                  </Link>
-                </td>
-                <td className="p-3">{x.pages}</td>
-                <td className="p-3">{x.issues}</td>
-                <td className="p-3">{x.seoScore}</td>
-                <td className="p-3">{x.brokenLinks}</td>
-                <td className="p-3">{x.lastCrawled}</td>
-              </tr>
-            </tbody>
-          ))}
-        </table>
+        <DataTable data={projects} columns={columns} />
       </div>
     </>
   );
