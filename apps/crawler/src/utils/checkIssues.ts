@@ -27,7 +27,7 @@ export function checkIssues(crawledUrls: CrawledInfo) {
             } else {
                 issues.set(info.path, {
                     path: info.path,
-                    status: info.requestLayedData.statusCode,
+                    status: info.networkResult.info.statusCode,
                     title: Boolean(info.htmlLayedData.meta.title),
                     wordCount: info.htmlLayedData.content.wordCount,
                     issues: [{

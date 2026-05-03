@@ -1,12 +1,12 @@
 import axios from "axios";
+import { RequestLayerUrlData } from "./types/requestData.type";
 
 
 export async function fetchWebPage(url: URL): Promise<{
     success: true,
     data: {
-        response: axios.AxiosResponse<any, any, {}>
         html: string;
-        responseTime: number;
+        info: RequestLayerUrlData;
     },
 } | {
     success: false,
@@ -36,8 +36,27 @@ export async function fetchWebPage(url: URL): Promise<{
             success: true,
             data: {
                 html: response.data,
-                responseTime: end - start,
-                response
+                info: {
+                    url: url.toString(),
+                    method: "GET",
+                    statusCode: response.status,
+                    requestTime: end - start,
+                    protocol: response.request?.protocol || "",
+                    type: "html",
+                    domain: url.hostname,
+                    size: response.data.length,
+                    headers: {
+                        contentType: response.headers["content-type"] as string | null,
+                        cacheControl: response.headers["cache-control"] as string | null,
+                        contentLength: parseInt(response.headers["content-length"] as string) || null,
+                        server: response.headers["server"] as string | null,
+                        xRobotsTag: response.headers["x-robots-tag"] as string | null
+                    },
+                    security: {
+                        sslValid: url.protocol === "https:",
+                        hstsEnabled: !!response.headers["strict-transport-security"],
+                    }
+                }
             }
         }
     } catch (error) {

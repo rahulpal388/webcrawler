@@ -17,13 +17,13 @@ export const SEORules: SEORulesType[] = [
     {
         name: "HTTPS enabled",
         point: 5,
-        check: (data) => data.requestLayedData.protocol === "https"
+        check: (data) => data.networkResult.info.protocol === "https"
     },
 
     {
         name: "Valid status code",
         point: 5,
-        check: (data) => data.requestLayedData.statusCode === 200
+        check: (data) => data.networkResult.info.statusCode === 200
     },
 
     {
@@ -47,7 +47,7 @@ export const SEORules: SEORulesType[] = [
     {
         name: "Response time acceptable",
         point: 2,
-        check: (data) => data.requestLayedData.networkTimings.totalResponseTime < 2000
+        check: (data) => data.networkResult.info.requestTime < 2000
     },
 
 
@@ -146,7 +146,7 @@ export const SEORules: SEORulesType[] = [
     {
         name: "URL length acceptable",
         point: 2,
-        check: (data) => data.requestLayedData.url.length < 100
+        check: (data) => data.networkResult.info.url.length < 100
     },
 
 

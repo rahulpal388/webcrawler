@@ -1,10 +1,10 @@
 import { HtmlLayerDataExtactor } from "./extractor/htmlLayerDataExtractor";
 import { linkExtractor } from "./extractor/linkExtractor";
-import { requestLayedDataExtractor } from "./extractor/requestLayerDataExtractor";
 import { fetchWebPage } from "./fetchWebPage";
 import { HtmlLayerUrlData } from "./types/htmlData.type";
-import { RequestLayerUrlData } from "./types/requestData.type";
+import { CrawlNetworkResult, NetworkSummaryType } from "./types/requestData.type";
 import { analyseDomainUrls } from "./utils/analyseDomainUrls";
+import { CheckCrawability } from "./utils/checkCrawability";
 import { checkIssues } from "./utils/checkIssues";
 import { checkSEO } from "./utils/checkUrlSEO";
 
@@ -14,7 +14,7 @@ const frontierQueue = new Set<string>();
 
 export type CrawledUrlInfo = {
     path: string;
-    requestLayedData: RequestLayerUrlData;
+    networkResult: CrawlNetworkResult;
     htmlLayedData: HtmlLayerUrlData;
 }
 
@@ -55,7 +55,6 @@ async function crawlerHandler(crawlUrl: string) {
     }
     console.log("url has been crawled")
     console.log(JSON.stringify([...crawledUrl], null, 2));
-    console.log("these are the issues")
     const origin = new URL(crawlUrl).origin;
     const pageResult = crawledUrl.get(origin);
     if (pageResult) {
@@ -80,18 +79,17 @@ async function crawler(url: URL): Promise<{
         };
     }
 
-
-    const requestLayedData = await requestLayedDataExtractor({
-        response: data.response,
-        responseTime: data.responseTime,
-        url
-    })
+    // ⚠️ check the crawability of the url and set the crawlability in requestLayedData
+    const crawlability = CheckCrawability();
 
     const htmlLayedData = HtmlLayerDataExtactor(data.html, url);
     if (crawledUrl.has(url.origin)) {
         crawledUrl.get(url.origin)?.crawledUrlInfo.push({
             path: url.pathname,
-            requestLayedData,
+            networkResult: {
+                info: data.info,
+                crawlability
+            },
             htmlLayedData
         })
     } else {
@@ -99,7 +97,10 @@ async function crawler(url: URL): Promise<{
             domain: url.origin,
             crawledUrlInfo: [{
                 path: url.pathname,
-                requestLayedData,
+                networkResult: {
+                    info: data.info,
+                    crawlability
+                },
                 htmlLayedData
             }]
         })
