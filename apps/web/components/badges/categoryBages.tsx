@@ -48,7 +48,7 @@ export function CategoryBadges({
 }) {
   return (
     <>
-      <div className="caption w-fit rounded-md bg-blue-50 px-4 py-[1.6px] text-blue-600">
+      <div className="caption-xs w-fit rounded-md bg-blue-50 px-4 py-[1.6px] text-blue-600">
         {categoryBadges[category].label}
       </div>
     </>

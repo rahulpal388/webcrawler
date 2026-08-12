@@ -7,6 +7,8 @@ import {
   StatusType,
   ImpactType,
 } from "@repo/config/types/apiResponseType/issuesTypes";
+import { Button } from "@repo/ui/components/button";
+import { Download } from "lucide-react";
 
 const severityOptions: SelectOptionsType<SeverityType>[] = [
   { label: "All", id: "all" },
@@ -64,36 +66,62 @@ export function IssuesFilterActions({
 }: IssuesFilterActionsProps) {
   return (
     <>
-      <div className="flex gap-4">
-        <Select
-          value={selected["severity"]}
-          onValueChange={(value) =>
-            setSelected({ ...selected, severity: value })
-          }
-          options={severityOptions}
-          title="Severity"
-        />
+      <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <Select
+            value={selected["severity"]}
+            onValueChange={(value) =>
+              setSelected({ ...selected, severity: value })
+            }
+            options={severityOptions}
+            title="Severity"
+          />
 
-        <Select
-          value={selected["status"]}
-          onValueChange={(value) => setSelected({ ...selected, status: value })}
-          options={statusOptions}
-          title="Status"
-        />
-        <Select
-          value={selected["impact"]}
-          onValueChange={(value) => setSelected({ ...selected, impact: value })}
-          options={impactOptions}
-          title="Impact"
-        />
-        <Select
-          value={selected["category"]}
-          onValueChange={(value) =>
-            setSelected({ ...selected, category: value })
-          }
-          options={categoryOptions}
-          title="Category"
-        />
+          <Select
+            value={selected["status"]}
+            onValueChange={(value) =>
+              setSelected({ ...selected, status: value })
+            }
+            options={statusOptions}
+            title="Status"
+          />
+          <Select
+            value={selected["impact"]}
+            onValueChange={(value) =>
+              setSelected({ ...selected, impact: value })
+            }
+            options={impactOptions}
+            title="Impact"
+          />
+          <Select
+            value={selected["category"]}
+            onValueChange={(value) =>
+              setSelected({ ...selected, category: value })
+            }
+            options={categoryOptions}
+            title="Category"
+          />
+          <Button
+            variant="secondary"
+            size="md"
+            onClick={() =>
+              setSelected({
+                severity: "all",
+                category: "all",
+                status: "all",
+                impact: "all",
+              })
+            }
+          >
+            Clear Filters
+          </Button>
+        </div>
+        <div>
+          <Button variant="primary" size="md">
+            <Download size={20} />
+            Export Issues
+          </Button>
+        </div>
       </div>
     </>
   );

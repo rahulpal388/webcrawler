@@ -42,7 +42,7 @@ export function SeverityBadges({
   return (
     <>
       <div
-        className="caption w-fit rounded-lg px-4 py-[1.6px]"
+        className="caption-xs w-fit rounded-lg px-4 py-[1.6px]"
         style={{
           backgroundColor: sev.bgColor,
           color: sev.labelColor,

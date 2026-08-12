@@ -33,7 +33,7 @@ export function StatusBadge({
   return (
     <>
       <div
-        className={`${statusItems[status].bgColor} w-fit rounded-md px-4 py-[1.6px] text-sm ${statusItems[status].textColor} `}
+        className={`${statusItems[status].bgColor} w-fit rounded-md px-4 py-[1.6px] text-xs ${statusItems[status].textColor} `}
       >
         {statusItems[status].label}
       </div>

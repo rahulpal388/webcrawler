@@ -34,7 +34,7 @@ export function StatusCodeBadge({ statusCode }: { statusCode: number }) {
   return (
     <>
       <div
-        className="caption w-fit rounded-lg px-4 py-[1.6px]"
+        className="caption-xs w-fit rounded-lg px-4 py-[1.6px]"
         style={{
           backgroundColor: st.backgroundColor,
           color: st.color,

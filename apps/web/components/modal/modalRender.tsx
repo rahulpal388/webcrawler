@@ -3,7 +3,7 @@ import { modalRegistry } from "../../constant/modalRegistry";
 import { useModalStore } from "../../store/modalStore";
 
 export function ModalRender() {
-  const { open, modalType, closeModal } = useModalStore();
+  const { open, modalType } = useModalStore();
 
   if (!open || !modalType) return null;
 

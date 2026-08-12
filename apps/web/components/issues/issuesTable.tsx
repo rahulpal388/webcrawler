@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { IssuesFilter, IssuesFilterActions } from "./issuesFilterActions";
 import { DataTable, Column } from "@repo/ui/components/table";
 import { IssuesTableMeta } from "./issuesTableMeta";
@@ -12,7 +12,7 @@ import { IssuesTableActions } from "./issuesTableActions";
 import { Card } from "@repo/ui/components/card/card";
 import { IssuesPagination } from "./issuesPagination";
 import { Select } from "@repo/ui/components/select";
-import { issuesData } from "./issuesTempData";
+import { issuesData } from "@repo/config/constant/responseConstant/issues/issuesTempData";
 const ColumnsType: Column<IssuesTableDataType>[] = [
   {
     key: "issues",
@@ -57,6 +57,8 @@ const ColumnsType: Column<IssuesTableDataType>[] = [
   },
 ];
 
+type RowPerPageType = 5 | 10 | 15 | 20;
+
 export function IssuesTable() {
   const [selected, setSelected] = useState<IssuesFilter>({
     severity: "all",
@@ -64,26 +66,32 @@ export function IssuesTable() {
     status: "all",
     impact: "all",
   });
-  const [rowsPerPage, setRowsPerPage] = useState<"5" | "10" | "15" | "20">(
-    "10",
-  );
-  const [data, setData] = useState<IssuesTableDataType[]>(issuesData);
+  const [rowsPerPage, setRowsPerPage] = useState<RowPerPageType>(10);
+  const [currentDataView, setCurrentDataView] = useState<number>(1);
 
-  (useEffect(() => {
-    const filteredData = issuesData.filter((issue) => {
+  const filteredData = useMemo(() => {
+    return issuesData.filter((issue) => {
       const severityMatch =
         selected.severity === "all" || issue.severity === selected.severity;
+
       const categoryMatch =
         selected.category === "all" || issue.category === selected.category;
+
       const statusMatch =
         selected.status === "all" || issue.status === selected.status;
+
       const impactMatch =
         selected.impact === "all" || issue.impact === selected.impact;
+
       return severityMatch && categoryMatch && statusMatch && impactMatch;
     });
-    setData(filteredData);
-  }),
-    [selected]);
+  }, [issuesData, selected]);
+
+  const startIndex = (currentDataView - 1) * rowsPerPage;
+  const endIndex = startIndex + rowsPerPage;
+  const currentPageData = useMemo(() => {
+    return filteredData.slice(startIndex, endIndex);
+  }, [filteredData, currentDataView, rowsPerPage]);
 
   return (
     <>
@@ -92,17 +100,27 @@ export function IssuesTable() {
         <Card className="space-y-4">
           <DataTable
             columns={ColumnsType}
-            data={data}
+            data={currentPageData}
             className="-mx-4 -mt-4 rounded shadow-none"
           />
-          <div className="flex items-center justify-between gap-8">
-            <p className="caption-xs">showing 10 of 100 issues</p>
-            <IssuesPagination />
+          <div className="flex h-16 items-center justify-between gap-8">
+            <p className="caption-xs">
+              showing {startIndex + 1} to {endIndex} of {issuesData.length}{" "}
+              issues
+            </p>
+            <IssuesPagination
+              rowPerPage={rowsPerPage}
+              filterDataLength={filteredData.length}
+              setCurrentDataView={setCurrentDataView}
+              currentDataView={currentDataView}
+            />
             <div className="flex items-center gap-4">
               <p className="body-sm">Rows:</p>
               <Select
-                value={rowsPerPage}
-                onValueChange={(value) => setRowsPerPage(value)}
+                value={rowsPerPage.toString()}
+                onValueChange={(value) =>
+                  setRowsPerPage(Number(value) as RowPerPageType)
+                }
                 options={[
                   {
                     id: "5",

@@ -32,7 +32,7 @@ export function ImpactBadges({
         <div
           className={`${impactBadges[impact].bgColor} size-3 rounded-full`}
         />
-        <span className="caption">{impactBadges[impact].label}</span>
+        <span className="caption-xs">{impactBadges[impact].label}</span>
       </div>
     </>
   );
