@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "../context/providers";
 import { ModalRender } from "../components/modal/modalRender";
+import { DrawerRender } from "../components/drawer/drawerRender";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -45,8 +46,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} bg-surface-base`}>
-        <Providers>{children}</Providers>
-        <ModalRender />
+        <Providers>
+          {children}
+          <ModalRender />
+          <DrawerRender />
+        </Providers>
       </body>
     </html>
   );

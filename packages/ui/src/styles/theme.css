@@ -7,6 +7,9 @@
   --color-primary-hover: var(--color-primary-hover);
   --color-primary-active: var(--color-primary-active);
 
+  --color-link: var(--color-link);
+  --color-page-sideBar: var(--color-page-sideBar);
+
   --color-text-primary: var(--color-text-primary);
   --color-text-secondary: var(--color-text-secondary);
   --color-text-tertiary: var(--color-text-tertiary);

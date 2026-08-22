@@ -1,5 +1,5 @@
 "use client";
-import { modalRegistry } from "../../constant/modalRegistry";
+import { modalRegistry } from "./modalRegistry";
 import { useModalStore } from "../../store/modalStore";
 
 export function ModalRender() {

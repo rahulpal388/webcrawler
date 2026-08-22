@@ -4,7 +4,8 @@ import { ButtonHTMLAttributes, ReactNode } from "react";
 import { cn } from "../utils";
 import { MoveRight } from "lucide-react";
 
-type BtnVariants = "primary" | "secondary" | "outline" | "accent-outline" | "ghost" | "ghost-icon";
+type BtnVariants =
+  "primary" | "secondary" | "outline" | "accent-outline" | "ghost" | "ghost-icon" | "disable";
 
 type ButtonSize = "sm" | "md" | "lg";
 
@@ -22,6 +23,7 @@ const variants: Record<BtnVariants, React.HTMLAttributes<HTMLButtonElement>["cla
     "  text-primary bg-surface-base  hover:bg-surface-muted border border-primary  ",
   ghost: "  text-text-primary hover:opacity-80   ",
   "ghost-icon": "  text-primary hover:opacity-80   ",
+  disable: "opacity-50 cursor-not-allowed ",
 };
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

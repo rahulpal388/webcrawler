@@ -3,6 +3,7 @@ import { AffectedPagesType } from "@repo/config/types/apiResponseType/issuesType
 import { Button } from "@repo/ui/components/button";
 import { SquareArrowOutUpRight } from "lucide-react";
 import { useState } from "react";
+import { useDrawerStore } from "../../../store/drawerStore";
 
 export function AffectedPages({
   affectedPages,
@@ -10,7 +11,7 @@ export function AffectedPages({
   affectedPages: AffectedPagesType;
 }) {
   const [currentSlice, setCurrentSlice] = useState<number>(5);
-
+  const openDrawer = useDrawerStore((s) => s.openDrawer);
   return (
     <>
       <div className="border-border-muted space-y-4 rounded-md border-[1.5px] p-4">
@@ -23,6 +24,14 @@ export function AffectedPages({
             <div
               key={af.pageId}
               className="caption text-text-primary flex cursor-pointer items-center gap-2 underline"
+              onClick={(e) => {
+                openDrawer({
+                  type: "view-pages",
+                  param: {
+                    viewPagesId: af.pageId,
+                  },
+                });
+              }}
             >
               {af.url}
               <SquareArrowOutUpRight size={12} />

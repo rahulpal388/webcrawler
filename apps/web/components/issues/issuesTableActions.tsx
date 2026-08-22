@@ -1,16 +1,21 @@
-import { IssuesTableDataType } from "@repo/config/types/apiResponseType/issuesTypes";
+import { IssuesResponseType } from "@repo/config/types/apiResponseType/issuesTypes";
 import { Button } from "@repo/ui/components/button";
-import { useModalStore } from "../../store/modalStore";
+import { useDrawerStore } from "../../store/drawerStore";
 
-export function IssuesTableActions({ row }: { row: IssuesTableDataType }) {
-  const openModal = useModalStore((state) => state.openModal);
+export function IssuesTableActions({ row }: { row: IssuesResponseType }) {
+  const openDrawer = useDrawerStore((s) => s.openDrawer);
   return (
     <>
       <Button
         size="sm"
         variant="outline"
         onClick={() => {
-          openModal("fix-issues");
+          openDrawer({
+            type: "fix-issues",
+            param: {
+              fixIssuesId: row.id,
+            },
+          });
         }}
       >
         Fix Issues

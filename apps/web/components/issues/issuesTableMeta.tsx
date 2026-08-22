@@ -1,6 +1,6 @@
-import { IssuesTableDataType } from "@repo/config/types/apiResponseType/issuesTypes";
+import { IssuesResponseType } from "@repo/config/types/apiResponseType/issuesTypes";
 
-export function IssuesTableMeta({ row }: { row: IssuesTableDataType }) {
+export function IssuesTableMeta({ row }: { row: IssuesResponseType }) {
   return (
     <>
       <div className="flex flex-col">

@@ -1,6 +1,6 @@
 "use client";
 import { KPICardItem } from "./kpiCardItem";
-import { useKPIMatrix } from "../../../hooks/dashboard.hooks";
+import { useKPIMatrix } from "../../../queries/dashboard.hooks";
 
 export function ScoresCards() {
   const { data, isLoading } = useKPIMatrix();

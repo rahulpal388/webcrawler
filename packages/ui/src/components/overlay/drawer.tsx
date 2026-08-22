@@ -8,10 +8,12 @@ export function Drawer({
   children,
   onClose,
   className,
+  containerClassName,
 }: {
   children: React.ReactNode;
   onClose: () => void;
   className?: string;
+  containerClassName?: string;
 }) {
   return (
     <Overlay onClose={onClose}>
@@ -32,15 +34,13 @@ export function Drawer({
             duration: 0.3,
           }}
 
-          className={cn("  h-full bg-white shadow-xl ", className)}
+          className={cn(" relative h-full overflow-auto py-4  bg-white shadow-xl ", className)}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className=" flex p-4 items-center justify-end gap-2 ">
-            <Button variant="outline" onClick={onClose}>
-              <X size={28} />
-            </Button>
-          </div>
-          <div className="flex-1 overflow-auto p-6">{children}</div>
+          <Button variant="ghost" onClick={onClose} className="absolute top-4 right-4">
+            <X size={26} className="stroke-text-secondary" />
+          </Button>
+          <div className={cn("flex-1   px-6 h-full ", containerClassName)}>{children}</div>
         </motion.div>
       </div>
     </Overlay>

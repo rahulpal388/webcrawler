@@ -6,6 +6,14 @@
 @import "./utils.css";
 @import "./typegraphy.css";
 
+@utility project-card-features {
+  width: 13rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
 .hero-bg {
   background:
     radial-gradient(circle at top left, rgba(254, 79, 0, 0.18), transparent 40%),
@@ -29,10 +37,40 @@
   font-size: 13px;
 }
 
-@utility project-card-features {
-  width: 13rem;
+/* 
+########################################
+  CODE SNIPPET STYLES
+########################################
+*/
 
-  @media (max-width: 768px) {
-    width: 100%;
-  }
+.code-snippet {
+  overflow: hidden;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  background: #0d1117;
+}
+
+.code-snippet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #a1a1aa;
+  font-size: var(--font-size-sm);
+}
+
+.code-snippet-content {
+  overflow-x: auto;
+  padding: 16px;
+}
+
+.code-snippet-content pre {
+  margin: 0;
+  background: transparent !important;
+}
+
+.code-snippet-content code {
+  font-size: 13px;
+  line-height: 1.7;
 }

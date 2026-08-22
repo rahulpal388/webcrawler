@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { IssuesFilter, IssuesFilterActions } from "./issuesFilterActions";
 import { DataTable, Column } from "@repo/ui/components/table";
 import { IssuesTableMeta } from "./issuesTableMeta";
-import { IssuesTableDataType } from "@repo/config/types/apiResponseType/issuesTypes";
+import { IssuesResponseType } from "@repo/config/types/apiResponseType/issuesTypes";
 import { SeverityBadges } from "../badges/severityBadges";
 import { CategoryBadges } from "../badges/categoryBages";
 import { ImpactBadges } from "../badges/impactBadges";
@@ -13,7 +13,8 @@ import { Card } from "@repo/ui/components/card/card";
 import { IssuesPagination } from "./issuesPagination";
 import { Select } from "@repo/ui/components/select";
 import { issuesData } from "@repo/config/constant/responseConstant/issues/issuesTempData";
-const ColumnsType: Column<IssuesTableDataType>[] = [
+
+const ColumnsType: Column<IssuesResponseType>[] = [
   {
     key: "issues",
     heading: "Issue",
@@ -68,7 +69,6 @@ export function IssuesTable() {
   });
   const [rowsPerPage, setRowsPerPage] = useState<RowPerPageType>(10);
   const [currentDataView, setCurrentDataView] = useState<number>(1);
-
   const filteredData = useMemo(() => {
     return issuesData.filter((issue) => {
       const severityMatch =
