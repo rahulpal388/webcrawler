@@ -1,8 +1,10 @@
+import { usePageSideBarStore } from "../../store/pageSidebarStore";
+import { PageContentsRepository } from "./pageContentsResposity";
+
 export function PageContents() {
-  return (
-    <div className="flex h-full w-full flex-col gap-4 p-4">
-      <h1 className="text-lg font-semibold">Page Contents</h1>
-      <p>This is the page contents area.</p>
-    </div>
-  );
+  const currentPageSideBar = usePageSideBarStore((state) => state.openItem);
+
+  const SideBarContent = PageContentsRepository[currentPageSideBar];
+
+  return <SideBarContent />;
 }

@@ -4,12 +4,17 @@ import { PageSidebar } from "../../pages/pageSidebar";
 import { PageContents } from "../../pages/pageContents";
 import { SquareArrowOutUpRight } from "lucide-react";
 import Link from "next/link";
+import { Loader } from "@repo/ui/components/loader";
 
 export function ViewPagesDrawer() {
   const { closeDrawer, drawers } = useDrawerStore();
   const currentDrawer = drawers.at(-1);
-  const a =
-    currentDrawer?.type === "view-pages" && currentDrawer.param.viewPagesId;
+  const currOpenDrawer =
+    currentDrawer?.type === "view-pages" ? currentDrawer.param : null;
+
+  if (!currOpenDrawer) {
+    return null;
+  }
   return (
     <>
       <Drawer
@@ -21,19 +26,19 @@ export function ViewPagesDrawer() {
           <h3 className="heading-3 text-text-primary flex w-full items-center gap-2">
             <span className="font-bold">Page Details: </span>
             <Link
-              href={"https://example.com"}
+              href={currOpenDrawer.url}
               target="_blank"
               rel="noopener noreferrer"
               className="text-link flex items-center justify-center gap-2 font-bold"
             >
-              {"https://example.com"}
+              <span className="max-w-[32rem] truncate">
+                {currOpenDrawer.url}
+              </span>
               <SquareArrowOutUpRight />
             </Link>
           </h3>
           <p className="caption-xs text-text-secondary">
-            {
-              "Words To Minutes Calculator: Convert Word Count to Minutes of Speech"
-            }
+            {currOpenDrawer.title}
           </p>
         </div>
         <div className="mt-4 flex h-full w-full">

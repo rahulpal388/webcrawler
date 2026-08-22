@@ -60,6 +60,7 @@ export type AffectedPagesType = {
     pages: {
         pageId: string;
         url: string;
+        title: string;
     }[]
 }
 

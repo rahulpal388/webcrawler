@@ -150,58 +150,73 @@ export default function Page() {
                 {
                     pageId: "page_001",
                     url: "https://example.com/",
+                    title: "Home - SEO Audit Tool",
                 },
                 {
                     pageId: "page_002",
                     url: "https://example.com/products",
+                    title: "Products - SEO Audit Tool",
                 },
                 {
                     pageId: "page_003",
                     url: "https://example.com/products/seo-audit",
+                    title: "SEO Audit Tool - Analyze Your Website",
                 },
                 {
                     pageId: "page_004",
                     url: "https://example.com/products/site-crawler",
+                    title: "Site Crawler - Discover Your Website's Structure",
                 },
                 {
                     pageId: "page_005",
                     url: "https://example.com/features",
+
+                    title: "Features - SEO Audit Tool",
                 },
                 {
                     pageId: "page_006",
                     url: "https://example.com/features/technical-seo",
+                    title: "Technical SEO - Features - SEO Audit Tool",
                 },
                 {
                     pageId: "page_007",
                     url: "https://example.com/pricing",
+                    title: "Pricing - SEO Audit Tool",
                 },
                 {
                     pageId: "page_008",
                     url: "https://example.com/about",
+                    title: "About - SEO Audit Tool",
                 },
                 {
                     pageId: "page_009",
                     url: "https://example.com/contact",
+                    title: "Contact - SEO Audit Tool",
                 },
                 {
                     pageId: "page_010",
                     url: "https://example.com/blog",
+                    title: "Blog - SEO Audit Tool",
                 },
                 {
                     pageId: "page_011",
                     url: "https://example.com/blog/technical-seo",
+                    title: "Technical SEO - Blog - SEO Audit Tool",
                 },
                 {
                     pageId: "page_012",
                     url: "https://example.com/blog/seo-audit-guide",
+                    title: "SEO Audit Guide - Blog - SEO Audit Tool",
                 },
                 {
                     pageId: "page_013",
                     url: "https://example.com/resources",
+                    title: "Resources - SEO Audit Tool",
                 },
                 {
                     pageId: "page_014",
                     url: "https://example.com/resources/seo-checklist",
+                    title: "SEO Checklist - Resources - SEO Audit Tool",
                 },
             ],
         },
@@ -346,34 +361,42 @@ export default function AuditPage() {
                 {
                     pageId: "page_002",
                     url: "https://example.com/products",
+                    title: "Products - SEO Audit Tool",
                 },
                 {
                     pageId: "page_003",
                     url: "https://example.com/products/seo-audit",
+                    title: "SEO Audit - Products - SEO Audit Tool",
                 },
                 {
                     pageId: "page_004",
                     url: "https://example.com/products/site-crawler",
+                    title: "Site Crawler - Products - SEO Audit Tool",
                 },
                 {
                     pageId: "page_006",
                     url: "https://example.com/features/technical-seo",
+                    title: "Technical SEO - Features - SEO Audit Tool",
                 },
                 {
                     pageId: "page_007",
                     url: "https://example.com/pricing",
+                    title: "Pricing - SEO Audit Tool",
                 },
                 {
                     pageId: "page_010",
                     url: "https://example.com/blog",
+                    title: "Blog - SEO Audit Tool",
                 },
                 {
                     pageId: "page_011",
                     url: "https://example.com/blog/technical-seo",
+                    title: "Technical SEO - Blog - SEO Audit Tool",
                 },
                 {
                     pageId: "page_012",
                     url: "https://example.com/blog/seo-audit-guide",
+                    title: "SEO Audit Guide - Blog - SEO Audit Tool",
                 },
             ],
         },
@@ -511,26 +534,32 @@ export default function AuditPage() {
                 {
                     pageId: "page_003",
                     url: "https://example.com/products/seo-audit",
+                    title: "SEO Audit - Products - SEO Audit Tool",
                 },
                 {
                     pageId: "page_004",
                     url: "https://example.com/products/site-crawler",
+                    title: "Site Crawler - Products - SEO Audit Tool",
                 },
                 {
                     pageId: "page_006",
                     url: "https://example.com/features/technical-seo",
+                    title: "Technical SEO - Features - SEO Audit Tool",
                 },
                 {
                     pageId: "page_008",
                     url: "https://example.com/about",
+                    title: "About - SEO Audit Tool",
                 },
                 {
                     pageId: "page_010",
                     url: "https://example.com/blog",
+                    title: "Blog - SEO Audit Tool",
                 },
                 {
                     pageId: "page_013",
                     url: "https://example.com/resources",
+                    title: "Resources - SEO Audit Tool",
                 },
             ],
         },
@@ -671,38 +700,47 @@ export default function Page() {
                 {
                     pageId: "page_002",
                     url: "https://example.com/products",
+                    title: "Products - SEO Audit Tool",
                 },
                 {
                     pageId: "page_003",
                     url: "https://example.com/products/seo-audit",
+                    title: "SEO Audit - Products - SEO Audit Tool",
                 },
                 {
                     pageId: "page_004",
                     url: "https://example.com/products/site-crawler",
+                    title: "Site Crawler - Products - SEO Audit Tool",
                 },
                 {
                     pageId: "page_005",
                     url: "https://example.com/features",
+                    title: "Features - SEO Audit Tool",
                 },
                 {
                     pageId: "page_006",
                     url: "https://example.com/features/technical-seo",
+                    title: "Technical SEO - Features - SEO Audit Tool",
                 },
                 {
                     pageId: "page_007",
                     url: "https://example.com/pricing",
+                    title: "Pricing - SEO Audit Tool",
                 },
                 {
                     pageId: "page_010",
                     url: "https://example.com/blog",
+                    title: "Blog - SEO Audit Tool",
                 },
                 {
                     pageId: "page_011",
                     url: "https://example.com/blog/technical-seo",
+                    title: "Technical SEO - Blog - SEO Audit Tool",
                 },
                 {
                     pageId: "page_013",
                     url: "https://example.com/resources",
+                    title: "Resources - SEO Audit Tool",
                 },
             ],
         },

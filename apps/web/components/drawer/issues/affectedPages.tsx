@@ -29,6 +29,8 @@ export function AffectedPages({
                   type: "view-pages",
                   param: {
                     viewPagesId: af.pageId,
+                    url: af.url,
+                    title: af.title,
                   },
                 });
               }}

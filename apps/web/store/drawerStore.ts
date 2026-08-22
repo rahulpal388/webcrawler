@@ -6,7 +6,9 @@ type DrawerParams = {
         viewIssuesId: string;
     },
     "view-pages": {
-        viewPagesId: string
+        viewPagesId: string;
+        url: string;
+        title: string;
     },
     "fix-issues": {
         fixIssuesId: string
