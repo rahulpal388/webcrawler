@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Card } from "./card/card";
+import { Card } from "../card/card";
 import { ChevronDown } from "lucide-react";
-import { cn } from "../utils";
+import { cn } from "../../utils";
 import { motion, AnimatePresence } from "framer-motion";
 
 export interface SelectOptionsType<T extends string | number> {

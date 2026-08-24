@@ -86,7 +86,6 @@ export function SideBarItems({ isOpen }: { isOpen: boolean }) {
         {sideBarItems.map((item, idx) => {
           const href = item.getHref(projectId);
           const isActive = pathname === href;
-          console.log("isActive", isActive, "pathname", pathname, "href", href);
           return (
             <Link
               href={href}

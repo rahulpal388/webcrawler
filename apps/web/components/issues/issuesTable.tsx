@@ -11,7 +11,7 @@ import { StatusBadge } from "../badges/statusBadge";
 import { IssuesTableActions } from "./issuesTableActions";
 import { Card } from "@repo/ui/components/card/card";
 import { IssuesPagination } from "./issuesPagination";
-import { Select } from "@repo/ui/components/select";
+import { Select } from "@repo/ui/components/dropdown/select";
 import { issuesData } from "@repo/config/constant/responseConstant/issues/issuesTempData";
 
 const ColumnsType: Column<IssuesResponseType>[] = [

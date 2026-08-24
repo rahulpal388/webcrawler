@@ -14,7 +14,6 @@ export const IssuesQueries = {
         })
     },
     getIssuesInfo: (issueId: string | undefined) => {
-        console.log("issues id",issueId)
         return queryOptions({
             queryKey: ["issues-info", issueId],
             queryFn: () => getIssuesDetail(issueId!),

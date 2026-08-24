@@ -1,6 +1,6 @@
-import { Select } from "@repo/ui/components/select";
+import { Select } from "@repo/ui/components/dropdown/select";
 import { Dispatch, SetStateAction } from "react";
-import { SelectOptionsType } from "@repo/ui/components/select";
+import { SelectOptionsType } from "@repo/ui/components/dropdown/select";
 import {
   SeverityType,
   CategoryType,
