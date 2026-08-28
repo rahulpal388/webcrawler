@@ -1,5 +1,6 @@
 import { PageAnalysisType } from "./pageAnalysisType.js";
+import mongoose from "mongoose";
 
-export type analyzedUrlDataType = {
-    pageAnalysis: PageAnalysisType;
+export type AnalyzedUrlType = {
+    crawlId: mongoose.Types.ObjectId;
 };

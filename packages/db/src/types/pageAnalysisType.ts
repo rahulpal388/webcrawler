@@ -1,4 +1,4 @@
-import { EvaluateType } from "@repo/config/types/analysesTypes/evaluteTypes";
+import { EvaluateType } from "../../../contracts/src/types/analysesTypes/evaluteTypes.js";
 
 
 export type PageAnalysisType = {

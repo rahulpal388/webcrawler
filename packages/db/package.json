@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@repo/typescript-config": "*",
-    "@repo/config": "*",
+    "@repo/contracts": "*",
     "typescript": "^5.9.2"
   },
   "dependencies": {

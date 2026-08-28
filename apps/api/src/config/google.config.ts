@@ -1,5 +1,4 @@
 import { discovery } from "openid-client";
-import { env } from "../index.js";
 import {
   randomNonce,
   randomState,
@@ -9,6 +8,7 @@ import {
   Configuration,
 } from "openid-client";
 import { googleRedirectUrl } from "@/lib/googleRedirectUrl.js";
+import { env } from "@/app/app.js";
 
 export async function getGoogleConfiguration() {
   return discovery(

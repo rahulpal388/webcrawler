@@ -2,19 +2,14 @@ import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-type DropDownProps<T> = {
+type DropDownProps = {
   title: string;
   sideText: string | null;
-  data: T;
-  fields: Record<keyof T, string>;
+  titleSideText: string | null;
+  children: React.ReactNode;
 };
 
-export function DropDown<T extends Record<string, string | number | boolean>>({
-  title,
-  sideText,
-  data,
-  fields,
-}: DropDownProps<T>) {
+export function DropDown({ title, sideText, titleSideText, children }: DropDownProps) {
   const [open, setOpen] = useState(true);
   return (
     <>
@@ -25,7 +20,9 @@ export function DropDown<T extends Record<string, string | number | boolean>>({
         >
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => setOpen(!open)}>
             <ChevronDown size={14} className={`${open ? "rotate-180" : "rotate-0"}`} />
-            <p className="body font-semibold ">{title}</p>
+            <p className="body font-semibold ">
+              {title} <span className="caption-md font-light ">({titleSideText})</span>
+            </p>
           </div>
           {sideText && (
             <div className="border border-border-muted rounded-lg bg-surface-base shadow-sm px-4 py-px caption-xs  ">
@@ -56,12 +53,7 @@ export function DropDown<T extends Record<string, string | number | boolean>>({
 
               className="flex flex-col gap-4 mt-2 p-4  overflow-hidden "
             >
-              {Object.entries(data).map(([key, value]) => (
-                <div key={key} className="grid grid-cols-[260px_1fr] gap-2">
-                  <p className="body-sm ">{fields[key]}</p>
-                  <p className="caption">{`${value}`}</p>
-                </div>
-              ))}
+              {children}
             </motion.div>
           )}
         </AnimatePresence>

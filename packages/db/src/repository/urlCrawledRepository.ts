@@ -1,7 +1,7 @@
 import { Types } from "mongoose";
-import { urlCrawledModel } from "../model/urlCrawledModel.js";
 import { UrlCrawledType } from "../types/urlCrawledTypes.js";
 import { RepositoryResponseType } from "../types/repositoryResponseType.js";
+import UrlCrawledModel from "../model/urlCrawledModel.js";
 
 export const urlCrawledRepository = {
   addUrlCrawled,
@@ -14,7 +14,7 @@ export const urlCrawledRepository = {
 
 async function addUrlCrawled(urlInfo: UrlCrawledType) {
   try {
-    const url = await urlCrawledModel.create(urlInfo);
+    const url = await UrlCrawledModel.create(urlInfo);
     return {
       success: true,
       data: url,
@@ -34,7 +34,7 @@ async function getUrlCrawledWithoutAnalyzedUrlData(
   _id: Types.ObjectId | string,
 ): Promise<RepositoryResponseType<Omit<UrlCrawledType, "analyzedUrlData">>> {
   try {
-    const urlCrawledData = await urlCrawledModel
+    const urlCrawledData = await UrlCrawledModel
       .findById(_id)
       .select("-_id -__v -analyzedUrlData")
       .lean();
@@ -63,7 +63,7 @@ async function getUrlCrawled(
   _id: Types.ObjectId | string,
 ): Promise<RepositoryResponseType<UrlCrawledType>> {
   try {
-    const urlCrawledData = await urlCrawledModel.findById(_id).select("-_id -__v").lean();
+    const urlCrawledData = await UrlCrawledModel.findById(_id).select("-_id -__v").lean();
 
     if (!urlCrawledData) {
       return {
@@ -85,4 +85,4 @@ async function getUrlCrawled(
 
 // ###################### update  #######################
 
-async function updateUrlCrawled() {}
+async function updateUrlCrawled() { }

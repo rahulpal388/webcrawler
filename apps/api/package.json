@@ -7,8 +7,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "start": "node dist/index.js",
+    "dev": "tsx watch src/app/server.ts",
+    "start": "node dist/app/server.js",
     "build": "tsc"
   },
   "dependencies": {
@@ -25,7 +25,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@repo/config": "*",
+    "@repo/contracts": "*",
     "@repo/db": "*",
     "@repo/lib": "*",
     "@repo/queue": "*",

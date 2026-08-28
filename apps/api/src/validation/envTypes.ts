@@ -1,5 +1,5 @@
 import z from "zod";
-import { globalEnv } from "@repo/config/globalEnv";
+import { globalEnv } from "@repo/contracts/globalEnv"
 
 export const envSchema = globalEnv.extend({
   NODE_ENV: z.enum(["production", "development"]).default("development"),

@@ -1,5 +1,5 @@
 import { UAParser } from "ua-parser-js";
-import { DeviceInfo } from "@/types/deviceInfo.js";
+import { DeviceInfo } from "@/shared/types/deviceInfo.js";
 
 export function getDeviceInfo(userAgent: string | null): DeviceInfo {
   const parser = new UAParser(userAgent || undefined);
