@@ -1,24 +1,33 @@
-export type LogLevelType = "INFO" | "WARN" | "ERROR" | "DEBUG" | "FATAL";
+export type LogLevelType =
+  | "INFO"
+  | "WARN"
+  | "ERROR"
+  | "DEBUG"
+  | "FATAL";
 
-type LogMessageType = {
+export type LogMessageType = {
   message: string;
   path: string;
+  requestId: string;
   metaData?: Record<string, unknown>;
 };
 
-type RequestMessageType = {
-  timestamp: string;
-  level: LogLevelType;
+export type RequestStartedLogType = {
   requestId: string;
-  event: string;
   method: string;
   path: string;
   ip: string;
   userAgent: string;
-  contentLength: number
-}
+  contentLength?: number;
+};
 
-type FormateMessageType = LogMessageType & { level: LogLevelType };
+export type RequestCompletedLogType = {
+  requestId: string;
+  method: string;
+  path: string;
+  statusCode: number;
+  durationMs: number;
+};
 
 export const logger = loggerFn();
 
@@ -29,88 +38,83 @@ function loggerFn() {
     error,
     debug,
     fatal,
-    logRequest
+    logRequest,
+    logRequestCompleted,
   };
 
-  function formateMessage(msg: FormateMessageType) {
+  function formatMessage(
+    level: LogLevelType,
+    msg: LogMessageType,
+  ) {
     return JSON.stringify({
-      timeStamp: new Date().toISOString(),
-      level: msg.level,
+      requestId: msg.requestId,
+      level,
       message: msg.message,
+      path: msg.path,
       metaData: msg.metaData,
+      timestamp: new Date().toISOString(),
     });
-  }
-
-  function logRequest(msg: RequestMessageType) {
-    console.log(
-      "[REQUEST:]",
-      JSON.stringify({
-        timestamp: msg.timestamp,
-        level: msg.level,
-        requestId: msg.requestId,
-        event: msg.event,
-        method: msg.method,
-        path: msg.path,
-        ip: msg.ip,
-        userAgent: msg.userAgent,
-        contentLength: msg.contentLength
-      })
-    );
   }
 
   function info(msg: LogMessageType) {
     console.log(
-      "[INFO:]",
-      formateMessage({
-        level: "INFO",
-        message: msg.message,
-        metaData: msg.metaData,
-        path: msg.path,
-      }),
+      "[INFO]",
+      formatMessage("INFO", msg),
     );
   }
 
   function warn(msg: LogMessageType) {
     console.warn(
-      "[WARN:]",
-      formateMessage({
-        level: "WARN",
-        message: msg.message,
-        metaData: msg.metaData,
-        path: msg.path,
-      }),
+      "[WARN]",
+      formatMessage("WARN", msg),
     );
   }
+
   function error(msg: LogMessageType) {
     console.error(
-      "[ERROR:]",
-      formateMessage({
-        level: "ERROR",
-        message: msg.message,
-        metaData: msg.metaData,
-        path: msg.path,
-      }),
+      "[ERROR]",
+      formatMessage("ERROR", msg),
     );
   }
+
   function debug(msg: LogMessageType) {
     console.debug(
-      "[DEBUG:]",
-      formateMessage({
-        level: "DEBUG",
-        message: msg.message,
-        metaData: msg.metaData,
-        path: msg.path,
+      "[DEBUG]",
+      formatMessage("DEBUG", msg),
+    );
+  }
+
+  function fatal(msg: LogMessageType) {
+    console.error(
+      "[FATAL]",
+      formatMessage("FATAL", msg),
+    );
+  }
+
+  function logRequest(msg: RequestStartedLogType) {
+    const { requestId, ...rest } = msg;
+    console.log(
+      "[REQUEST]",
+      JSON.stringify({
+        requestId,
+        level: "INFO",
+        event: "REQUEST_STARTED",
+        rest,
+        timestamp: new Date().toISOString(),
       }),
     );
   }
-  function fatal(msg: LogMessageType) {
-    console.error(
-      "[FATAL:]",
-      formateMessage({
-        level: "FATAL",
-        message: msg.message,
-        metaData: msg.metaData,
-        path: msg.path,
+
+  function logRequestCompleted(msg: RequestCompletedLogType) {
+    const { requestId, ...rest } = msg;
+    console.log(
+      "[REQUEST]",
+      JSON.stringify({
+        requestId,
+        level: "INFO",
+        event: "REQUEST_COMPLETED",
+        rest,
+        timestamp: new Date().toISOString(),
       }),
     );
   }

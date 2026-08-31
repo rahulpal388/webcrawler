@@ -1,4 +1,4 @@
-import { IssuesResponseType } from "@repo/config/types/apiResponseType/issuesTypes";
+import { IssuesResponseType } from "@repo/contract/types/apiResponseType/issuesTypes";
 
 export function IssuesTableMeta({ row }: { row: IssuesResponseType }) {
   return (
@@ -10,3 +10,4 @@ export function IssuesTableMeta({ row }: { row: IssuesResponseType }) {
     </>
   );
 }
+

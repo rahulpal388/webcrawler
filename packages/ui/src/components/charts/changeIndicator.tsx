@@ -27,3 +27,4 @@ export function ChangeIndicator({ value, direction, label, className }: ChangeIn
     </>
   );
 }
+

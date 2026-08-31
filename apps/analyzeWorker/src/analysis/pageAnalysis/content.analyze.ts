@@ -1,7 +1,7 @@
 import crypto from "node:crypto";
 
 import { GatherInfoType } from "@/types/gatherInfoType.js";
-import { PageContentAnalysis } from "@repo/config/types/analysesTypes/perPages/pageContent";
+import { PageContentAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageContent";
 
 export function content(gatherInfo: GatherInfoType): PageContentAnalysis {
   // --------------------- Counts ---------------------
@@ -73,3 +73,5 @@ export function content(gatherInfo: GatherInfoType): PageContentAnalysis {
     readabilityScore,
   };
 }
+
+

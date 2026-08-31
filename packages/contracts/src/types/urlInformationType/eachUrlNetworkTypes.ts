@@ -33,3 +33,4 @@ export type EachUrlNetworkResultTypes = {
 
   responseHeaders: ResponseHeadersType;
 };
+

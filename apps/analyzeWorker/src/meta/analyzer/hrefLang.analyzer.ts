@@ -1,5 +1,5 @@
-import { HreflangAnalysis } from "@repo/config/types/analysesTypes/perPages/pageMeta";
-import { HreflangType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { HreflangAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageMeta";
+import { HreflangType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 
 
 
@@ -39,3 +39,4 @@ export function analyzeHreflang(
             ),
     };
 }
+

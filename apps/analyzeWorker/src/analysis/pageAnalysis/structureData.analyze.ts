@@ -1,5 +1,5 @@
 import { GatherInfoType } from "@/types/gatherInfoType.js";
-import { StructuredDataAnalysis } from "@repo/config/types/analysesTypes/perPages/pageStrucutre";
+import { StructuredDataAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageStrucutre";
 
 export function structureDataAnalysis(
   data: GatherInfoType["structureData"],
@@ -31,3 +31,5 @@ export function structureDataAnalysis(
     hasFaqSchema,
   };
 }
+
+

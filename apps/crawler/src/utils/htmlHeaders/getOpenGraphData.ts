@@ -1,4 +1,4 @@
-import { HTMLOpenGraphType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { HTMLOpenGraphType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 import * as cheerio from "cheerio";
 
 /*
@@ -50,3 +50,5 @@ export function getOpenGraphData($: cheerio.CheerioAPI): HTMLOpenGraphType {
     locale: ogMap.get("og:locale")?.[0] ?? null,
   };
 }
+
+

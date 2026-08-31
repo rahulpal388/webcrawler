@@ -1,5 +1,5 @@
 import * as cheerio from "cheerio";
-import { TwitterCardType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { TwitterCardType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 
 export function getTwitterCardData($: cheerio.CheerioAPI): TwitterCardType {
   const twitterMap = new Map<string, string[]>();
@@ -44,3 +44,5 @@ export function getTwitterCardData($: cheerio.CheerioAPI): TwitterCardType {
     },
   };
 }
+
+

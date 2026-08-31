@@ -1,4 +1,4 @@
-import { PageIndexabilityType } from "@repo/config/types/analysesTypes/perPages/pageIndexability";
+import { PageIndexabilityType } from "@repo/contract/types/analysesTypes/perPages/pageIndexability";
 import { GatherInfoType } from "@/types/gatherInfoType.js";
 export function indexabilityData(gatherInfo: GatherInfoType): PageIndexabilityType {
   const url = gatherInfo.networkInfo.url;
@@ -16,3 +16,5 @@ export function indexabilityData(gatherInfo: GatherInfoType): PageIndexabilityTy
     contentType: "html/text"
   };
 }
+
+

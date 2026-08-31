@@ -11,7 +11,7 @@ import { analyzeTitle } from "@/meta/analyzer/title.analyzer.js";
 import { analyzeTwitterCard } from "@/meta/analyzer/twitterCard.analyzer.js";
 import { analyzeViewport } from "@/meta/analyzer/viewPort.analyzer.js";
 import { GatherInfoType } from "@/types/gatherInfoType.js";
-import { PageMetaAnalysis } from "@repo/config/types/analysesTypes/perPages/pageMeta";
+import { PageMetaAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageMeta";
 
 
 export function metaData(
@@ -68,3 +68,4 @@ export function metaData(
     )
   };
 }
+

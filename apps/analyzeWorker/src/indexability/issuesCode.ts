@@ -42,3 +42,4 @@ export const INDEXABILITY_ISSUES_CODES = {
 
 export type IndexabilityIssueCode =
     typeof INDEXABILITY_ISSUES_CODES[keyof typeof INDEXABILITY_ISSUES_CODES];
+

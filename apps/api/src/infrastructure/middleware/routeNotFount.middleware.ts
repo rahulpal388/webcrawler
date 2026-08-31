@@ -8,3 +8,4 @@ export const routeNotFoundMiddleware = (_req: Request, res: Response, _next: Nex
         message: "Route not found",
     });
 }
+

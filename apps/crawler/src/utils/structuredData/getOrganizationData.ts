@@ -1,4 +1,4 @@
-import { JsonLdBlockType } from "@repo/config/types/urlInformationType/htmlStructureDataTypes";
+import { JsonLdBlockType } from "@repo/contract/types/urlInformationType/htmlStructureDataTypes";
 
 export function getOrganization(jsonLdBlocks: JsonLdBlockType[]) {
   let organizationName: string | null = null;
@@ -40,3 +40,5 @@ export function getOrganization(jsonLdBlocks: JsonLdBlockType[]) {
     organizationLogo,
   };
 }
+
+

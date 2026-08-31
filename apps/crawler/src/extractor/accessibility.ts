@@ -1,4 +1,4 @@
-import { AccessibilityType } from "@repo/config/types/urlInformationType/accessibilityTypes";
+import { AccessibilityType } from "@repo/contract/types/urlInformationType/accessibilityTypes";
 import * as Cheerio from "cheerio";
 
 export function accessibilityInfo($: Cheerio.CheerioAPI): AccessibilityType {
@@ -55,3 +55,5 @@ export function accessibilityInfo($: Cheerio.CheerioAPI): AccessibilityType {
     tablesMissingHeaders,
   };
 }
+
+

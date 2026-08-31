@@ -8,3 +8,4 @@ export type PageIndexabilityType = {
   canonicalUrl: HTMLCanonicalType[];
   contentType: string | null;
 };
+

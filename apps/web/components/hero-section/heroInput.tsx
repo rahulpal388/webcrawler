@@ -22,3 +22,4 @@ export function HeroInput({ className }: { className?: string }) {
     </>
   );
 }
+

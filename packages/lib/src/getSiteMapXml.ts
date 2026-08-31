@@ -1,5 +1,5 @@
 import { XMLParser } from "fast-xml-parser";
-import { headerConfig } from "@repo/config/constant/fetchHeaderConfig";
+import { headerConfig } from "@repo/contract/constant/fetchHeaderConfig";
 import axios from "axios";
 import { CrawlError } from "@/src/errorClass/crawlError";
 
@@ -46,3 +46,4 @@ export async function getSiteMapXml(sitemapUrl: string): Promise<GetSiteMapXmlRe
     }
   }
 }
+

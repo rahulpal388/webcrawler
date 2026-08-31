@@ -19,3 +19,4 @@ export const MANIFEST_RECOMMENDATIONS = {
         ]
     }
 } as const;
+

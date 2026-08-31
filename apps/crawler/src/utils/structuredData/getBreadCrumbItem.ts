@@ -1,7 +1,7 @@
 import {
   BreadcrumbItemType,
   JsonLdBlockType,
-} from "@repo/config/types/urlInformationType/htmlStructureDataTypes";
+} from "@repo/contract/types/urlInformationType/htmlStructureDataTypes";
 
 export function getBreadcrumbs(jsonLdBlocks: JsonLdBlockType[]): BreadcrumbItemType[] {
   const breadcrumbs: BreadcrumbItemType[] = [];
@@ -60,3 +60,5 @@ function extractBreadcrumbs(obj: Record<string, unknown>, breadcrumbs: Breadcrum
     });
   }
 }
+
+

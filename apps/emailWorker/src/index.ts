@@ -1,10 +1,10 @@
 import "dotenv/config";
 import { validateEnv } from "@/utils/validateEnv.js";
-import { createRedisConnection } from "@repo/queue/client/client";
-import { emailConsumerConfig } from "@repo/queue/streams/consumers/emailConsumer";
+import { createRedisConnection } from "@repo/redis/client/client";
+import { emailConsumerConfig } from "@repo/redis/streams/consumers/emailConsumer";
 import os from "os";
 import { Resend } from "resend";
-import { createConsumerGroup } from "@repo/queue/client/createConsumerGroup";
+import { createConsumerGroup } from "@repo/redis/client/createConsumerGroup";
 import { sendEmail } from "@/utils/sendEmail.js";
 import { logger } from "@repo/lib/logger";
 
@@ -45,24 +45,26 @@ async function main() {
     // Process the message here
     // send the email
     try {
-      console.log("Message Received");
-      console.log(msg.payload);
       const response = await sendEmail(msg);
 
       if (!response) {
         throw new Error("Error sending email");
       }
 
-      console.log(`Email of type ${msg.type} has send to email ${msg.payload.email}`);
-      console.log(response);
+      logger.info({
+        requestId: msg.eventId,
+        message: "Email sent successfully",
+        path: ".",
+      })
     } catch (error) {
       logger.error({
+        requestId: "<Request-Id>",
         message: "Error Sending email",
         path: ".",
       });
-      console.log(error);
     }
   }
 }
 
 main();
+

@@ -1,5 +1,5 @@
-import { CanonicalAnalysis } from "@repo/config/types/analysesTypes/perPages/pageMeta";
-import { HTMLCanonicalType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { CanonicalAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageMeta";
+import { HTMLCanonicalType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 
 export function analyzeCanonical(
     canonicals: HTMLCanonicalType[]
@@ -20,3 +20,4 @@ export function analyzeCanonical(
         hasInvalidCanonical: canonicals.some(c => !c.isValidUrl),
     };
 }
+

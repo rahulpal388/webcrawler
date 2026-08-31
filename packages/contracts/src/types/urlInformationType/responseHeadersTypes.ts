@@ -27,3 +27,4 @@ export type ResponseHeadersType = {
   lastModified: string | null;
   vary: string | null;
 };
+

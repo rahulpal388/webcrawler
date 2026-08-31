@@ -1,4 +1,4 @@
-import { PageHeadingAnalysis } from "@repo/config/types/analysesTypes/perPages/pageHeading";
+import { PageHeadingAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageHeading";
 import { GatherInfoType } from "@/types/gatherInfoType.js";
 
 export function headingsAnalyze(
@@ -23,3 +23,5 @@ export function headingsAnalyze(
     duplicateH1,
   };
 }
+
+

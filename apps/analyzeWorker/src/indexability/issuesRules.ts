@@ -1,6 +1,6 @@
-import { PageIndexabilityType } from "@repo/config/types/analysesTypes/perPages/pageIndexability";
+import { PageIndexabilityType } from "@repo/contract/types/analysesTypes/perPages/pageIndexability";
 import { IndexabilityIssueCode } from "@/indexability/issuesCode.js";
-import { RulesType } from "@repo/config/types/analysesTypes/rulesType";
+import { RulesType } from "@repo/contract/types/analysesTypes/rulesType";
 
 export const indexabilityIssuesRules: RulesType<
     PageIndexabilityType,
@@ -313,3 +313,4 @@ export const indexabilityIssuesRules: RulesType<
 
         },
     ];
+

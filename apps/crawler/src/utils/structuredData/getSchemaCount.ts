@@ -1,4 +1,4 @@
-import { JsonLdBlockType } from "@repo/config/types/urlInformationType/htmlStructureDataTypes";
+import { JsonLdBlockType } from "@repo/contract/types/urlInformationType/htmlStructureDataTypes";
 
 export function getSchemaCounts(jsonLdBlocks: JsonLdBlockType[]) {
   let productCount = 0;
@@ -55,3 +55,5 @@ export function getSchemaCounts(jsonLdBlocks: JsonLdBlockType[]) {
     personCount,
   };
 }
+
+

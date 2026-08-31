@@ -1,5 +1,5 @@
 import { GatherInfoType } from "../../types/gatherInfoType.js";
-import { PageImagesAnalysis } from "@repo/config/types/analysesTypes/perPages/pageImages";
+import { PageImagesAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageImages";
 
 export function imageAnalyse(imageInformation: GatherInfoType["media"]): PageImagesAnalysis {
   const imageCount = imageInformation.images.length;
@@ -42,3 +42,5 @@ export function imageAnalyse(imageInformation: GatherInfoType["media"]): PageIma
     imagesMissingDimensions,
   };
 }
+
+

@@ -1,4 +1,4 @@
-import { StackType } from "@repo/config/types/apiResponseType/issuesTypes";
+import { StackType } from "@repo/contract/types/apiResponseType/issuesTypes";
 import { Button } from "@repo/ui/components/button";
 import { Clipboard } from "lucide-react";
 
@@ -54,3 +54,4 @@ export function ChooseStackComponent({
     </>
   );
 }
+

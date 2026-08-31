@@ -1,5 +1,5 @@
 import * as cheerio from "cheerio";
-import { RobotDirective } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { RobotDirective } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 
 export function getMetaRobotsData($: cheerio.CheerioAPI): string[] {
   const metaRobots = new Set<RobotDirective>();
@@ -17,3 +17,5 @@ export function getMetaRobotsData($: cheerio.CheerioAPI): string[] {
 
   return Array.from(metaRobots);
 }
+
+

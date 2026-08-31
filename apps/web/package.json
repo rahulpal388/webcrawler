@@ -30,7 +30,7 @@
     "zustand": "^5.0.14"
   },
   "devDependencies": {
-    "@repo/config": "*",
+    "@repo/redis": "*",
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
     "@types/node": "^22.15.3",

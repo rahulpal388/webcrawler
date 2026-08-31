@@ -1,5 +1,5 @@
 "use client";
-import { AffectedPagesType } from "@repo/config/types/apiResponseType/issuesTypes";
+import { AffectedPagesType } from "@repo/contract/types/apiResponseType/issuesTypes";
 import { Button } from "@repo/ui/components/button";
 import { SquareArrowOutUpRight } from "lucide-react";
 import { useState } from "react";
@@ -61,3 +61,4 @@ export function AffectedPages({
     </>
   );
 }
+

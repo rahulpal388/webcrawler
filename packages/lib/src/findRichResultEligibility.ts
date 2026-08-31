@@ -1,4 +1,4 @@
-import { RICH_RESULT_ELIGIBLE } from "@repo/config/constant/googleRichResultEligible";
+import { RICH_RESULT_ELIGIBLE } from "@repo/contract/constant/googleRichResultEligible";
 
 export function findRichResultEligibility(schema: string[]): string[] {
   const eligibleRichResults: string[] = [];
@@ -9,3 +9,4 @@ export function findRichResultEligibility(schema: string[]): string[] {
   }
   return eligibleRichResults;
 }
+

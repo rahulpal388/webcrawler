@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { IssuesFilter, IssuesFilterActions } from "./issuesFilterActions";
 import { DataTable, Column } from "@repo/ui/components/table";
 import { IssuesTableMeta } from "./issuesTableMeta";
-import { IssuesResponseType } from "@repo/config/types/apiResponseType/issuesTypes";
+import { IssuesResponseType } from "@repo/contract/types/apiResponseType/issuesTypes";
 import { SeverityBadges } from "../badges/severityBadges";
 import { CategoryBadges } from "../badges/categoryBages";
 import { ImpactBadges } from "../badges/impactBadges";
@@ -12,7 +12,7 @@ import { IssuesTableActions } from "./issuesTableActions";
 import { Card } from "@repo/ui/components/card/card";
 import { IssuesPagination } from "./issuesPagination";
 import { Select } from "@repo/ui/components/dropdown/select";
-import { issuesData } from "@repo/config/constant/responseConstant/issues/issuesTempData";
+import { issuesData } from "@repo/contract/constant/responseConstant/issues/issuesTempData";
 
 const ColumnsType: Column<IssuesResponseType>[] = [
   {
@@ -148,3 +148,4 @@ export function IssuesTable() {
     </>
   );
 }
+

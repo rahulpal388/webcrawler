@@ -1,4 +1,4 @@
-import { CategoryType } from "@repo/config/types/apiResponseType/issuesTypes";
+import { CategoryType } from "@repo/contract/types/apiResponseType/issuesTypes";
 
 const categoryBadges: Record<
   Exclude<CategoryType, "all">,
@@ -54,3 +54,4 @@ export function CategoryBadges({
     </>
   );
 }
+

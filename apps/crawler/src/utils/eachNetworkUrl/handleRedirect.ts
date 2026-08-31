@@ -1,6 +1,6 @@
 import { IncomingMessage } from "node:http";
 import { urlDeDuplicateStore } from "@/index.js";
-import { RedirectChainType } from "@repo/config/types/urlInformationType/eachUrlNetworkTypes";
+import { RedirectChainType } from "@repo/contract/types/urlInformationType/eachUrlNetworkTypes";
 
 const MAX_REDIRECTS = 3;
 
@@ -43,3 +43,5 @@ export async function handleRedirect(
     attemptedRedirects: redirectChain.length,
   };
 }
+
+

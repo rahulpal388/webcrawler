@@ -1,5 +1,5 @@
 import { INDEXABILITY_ISSUES_CODES, IndexabilityIssueCode } from "@/indexability/issuesCode.js";
-import { RecommendationType } from "@repo/config/types/analysesTypes/recommendationTypes";
+import { RecommendationType } from "@repo/contract/types/analysesTypes/recommendationTypes";
 import { INDEXABILITY_DOCUMENTATION } from "@/indexability/documentations.js";
 
 export const indexabilityRecommendations: Record<
@@ -371,3 +371,4 @@ export const indexabilityRecommendations: Record<
         ]
     }
 } as const;
+

@@ -131,3 +131,4 @@ export function TrendChart({
     </div>
   );
 }
+

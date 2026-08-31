@@ -1,5 +1,5 @@
-import { TwitterCardAnalysis } from "@repo/config/types/analysesTypes/perPages/pageMeta";
-import { TwitterCardType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { TwitterCardAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageMeta";
+import { TwitterCardType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 
 
 
@@ -24,3 +24,4 @@ export function analyzeTwitterCard(
             !!twitter.player.playerUrl,
     };
 }
+

@@ -7,7 +7,8 @@
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
     "build": "tsc",
-    "email": "email dev --dir ./emails"
+    "email": "email dev --dir ./emails",
+    "lint": "eslint src/**/*.ts && eslint emails/**/*.ts"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +16,9 @@
   "type": "module",
   "devDependencies": {
     "@react-email/ui": "^6.9.1",
-    "@repo/config": "*",
+    "@repo/contracts": "*",
     "@repo/lib": "*",
-    "@repo/queue": "*",
+    "@repo/redis": "*",
     "@repo/typescript-config": "*",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
@@ -27,6 +28,7 @@
   "dependencies": {
     "@react-email/components": "^1.0.12",
     "@react-email/render": "^2.0.6",
+    "@repo/eslint-config": "*",
     "dotenv": "^16.0.3",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",

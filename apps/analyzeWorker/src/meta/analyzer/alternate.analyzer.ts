@@ -1,5 +1,5 @@
-import { AlternateAnalysis } from "@repo/config/types/analysesTypes/perPages/pageMeta";
-import { HTMLAlternateType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { AlternateAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageMeta";
+import { HTMLAlternateType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 
 export function analyzeAlternate(
     alternates: HTMLAlternateType[]
@@ -9,3 +9,4 @@ export function analyzeAlternate(
         alternateCount: alternates.length,
     };
 }
+

@@ -1,5 +1,5 @@
-import { overviewTempData } from "@repo/config/constant/responseConstant/pages/overviewTempdata";
-import { OverviewResponseType } from "@repo/config/types/apiResponseType/pages.responseType";
+import { overviewTempData } from "@repo/contract/constant/responseConstant/pages/overviewTempdata";
+import { OverviewResponseType } from "@repo/contract/types/apiResponseType/pages.responseType";
 
 
 

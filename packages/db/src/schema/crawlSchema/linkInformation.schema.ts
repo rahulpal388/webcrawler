@@ -32,3 +32,4 @@ export const htmlLinksSchema = new mongoose.Schema<HTMLLinkType>(linkSchemaDefin
   versionKey: false,
   strict: true,
 });
+

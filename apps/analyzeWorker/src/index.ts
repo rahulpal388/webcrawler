@@ -1,7 +1,7 @@
 import { validateEnv } from "@/utils/validateEnv.js";
 import "dotenv/config";
-import { createRedisConnection } from "@repo/queue/client/client";
-import { analyzerConsumerConfig } from "@repo/queue/streams/consumers/analyzeConsumer";
+import { createRedisConnection } from "@repo/redis/client/client";
+import { analyzerConsumerConfig } from "@repo/redis/streams/consumers/analyzeConsumer";
 import { connectDB } from "@repo/db/index";
 import { logger } from "@repo/lib/logger";
 import { urlCrawledRepository } from "@repo/db/repository/urlCrawledRepository";
@@ -110,3 +110,5 @@ console.log("analyzeWorker started");
 const metaAnalysis = evaluateMetaData(seoData.htmlHeader);
 console.log("metaAnalysis ");
 console.dir(metaAnalysis, { depth: null, color: true });
+
+

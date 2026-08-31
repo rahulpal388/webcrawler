@@ -22,3 +22,5 @@ export function getImageFormate(extension: string | null) {
       return extension ? "other" : null;
   }
 }
+
+

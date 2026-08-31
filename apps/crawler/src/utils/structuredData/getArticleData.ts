@@ -1,4 +1,4 @@
-import { JsonLdBlockType } from "@repo/config/types/urlInformationType/htmlStructureDataTypes";
+import { JsonLdBlockType } from "@repo/contract/types/urlInformationType/htmlStructureDataTypes";
 
 export function getArticleData(jsonLdBlocks: JsonLdBlockType[]) {
   let articleAuthor: string | null = null;
@@ -51,3 +51,5 @@ export function getArticleData(jsonLdBlocks: JsonLdBlockType[]) {
     articleModifiedTime,
   };
 }
+
+

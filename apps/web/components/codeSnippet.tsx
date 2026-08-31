@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { CodeSnippetType } from "@repo/config/types/apiResponseType/issuesTypes";
+import type { CodeSnippetType } from "@repo/contract/types/apiResponseType/issuesTypes";
 import { codeToHtml } from "shiki";
 import { Button } from "@repo/ui/components/button";
 import { Clipboard } from "lucide-react";
@@ -61,3 +61,4 @@ export function CodeSnippet({ language, code }: CodeSnippetType) {
     </div>
   );
 }
+

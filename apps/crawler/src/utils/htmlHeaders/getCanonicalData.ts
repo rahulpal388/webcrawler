@@ -1,4 +1,4 @@
-import { HTMLCanonicalType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { HTMLCanonicalType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 import * as cheerio from "cheerio";
 import { isAbsoluteUrl } from "@/utils/isAbsoluteUrl.js";
 
@@ -55,3 +55,5 @@ export function getCanonicalData($: cheerio.CheerioAPI, baseUrl: URL): HTMLCanon
 
   return canonical;
 }
+
+

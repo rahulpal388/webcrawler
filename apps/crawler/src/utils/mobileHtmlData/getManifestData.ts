@@ -8,3 +8,5 @@ export function getManifest($: cheerio.CheerioAPI, baseUrl: URL) {
     manifestUrl: href ? new URL(href, baseUrl).toString() : null,
   };
 }
+
+

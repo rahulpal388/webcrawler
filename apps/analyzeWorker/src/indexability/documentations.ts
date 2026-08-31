@@ -40,3 +40,4 @@ export const INDEXABILITY_DOCUMENTATION = {
         url: "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Type",
     },
 } as const;
+

@@ -1,4 +1,4 @@
-import { AuthIdentitySchemaType, AuthProvidersType } from "../../types/authIdentitySchema.Types.js";
+import { AuthIdentitySchemaType, AuthProvidersEnum } from "../../types/authIdentitySchema.Types.js";
 import { SchemaOf } from "../../types/schemaOfTypes.js";
 import mongoose from "mongoose";
 
@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 
 const AuthIdentitySchemaDefinition: SchemaOf<AuthIdentitySchemaType> = {
     userId: { type: mongoose.Types.ObjectId, required: true, ref: "User" },
-    provider: { type: String, enum: Object.values(AuthProvidersType), required: true },
+    provider: { type: String, enum: Object.values(AuthProvidersEnum), required: true },
     /*
    * For email authentication, this stores the user's email address.
    * For Google authentication, this stores Google's stable account identifier.

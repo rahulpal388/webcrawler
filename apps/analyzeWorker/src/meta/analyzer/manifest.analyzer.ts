@@ -1,4 +1,4 @@
-import { ManifestAnalysis } from "@repo/config/types/analysesTypes/perPages/pageMeta";
+import { ManifestAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageMeta";
 
 
 export function analyzeManifest(
@@ -10,3 +10,4 @@ export function analyzeManifest(
             manifest.trim().length > 0,
     };
 }
+

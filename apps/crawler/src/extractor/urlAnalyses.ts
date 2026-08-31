@@ -1,4 +1,4 @@
-import { UrlAnalysesType } from "@repo/config/types/urlInformationType/urlAnalysesTypes";
+import { UrlAnalysesType } from "@repo/contract/types/urlInformationType/urlAnalysesTypes";
 
 export function urlAnalyses(url: URL, crawlDepth: number): UrlAnalysesType {
   const urlLength = url.href.length;
@@ -43,3 +43,5 @@ export function urlAnalyses(url: URL, crawlDepth: number): UrlAnalysesType {
     isBlockedByRobotsTxt: true,
   };
 }
+
+

@@ -1,4 +1,4 @@
-import { LcpCandidateType } from "@repo/config/types/urlInformationType/performanceSignalTypes";
+import { LcpCandidateType } from "@repo/contract/types/urlInformationType/performanceSignalTypes";
 import * as cheerio from "cheerio";
 
 type ImageCandidate = {
@@ -61,3 +61,5 @@ export function findLcpCandidate($: cheerio.CheerioAPI): LcpCandidateType {
     hasEagerLoading: false,
   };
 }
+
+

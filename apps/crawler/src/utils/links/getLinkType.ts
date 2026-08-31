@@ -1,4 +1,4 @@
-import { LinkType } from "@repo/config/types/urlInformationType/htmlLinksTypes";
+import { LinkType } from "@repo/contract/types/urlInformationType/htmlLinksTypes";
 
 export function getLinkType(href: string, absoluteUrl: URL, baseUrl: URL): LinkType {
   const value = href.trim().toLowerCase();
@@ -29,3 +29,5 @@ export function getLinkType(href: string, absoluteUrl: URL, baseUrl: URL): LinkT
 
   return absoluteUrl.hostname === baseUrl.hostname ? "internal" : "external";
 }
+
+

@@ -1,4 +1,4 @@
-import { HTMLMetaViewportType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { HTMLMetaViewportType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 import * as cheerio from "cheerio";
 
 /*
@@ -42,3 +42,5 @@ export function getMetaViewportData($: cheerio.CheerioAPI): HTMLMetaViewportType
 
   return viewports;
 }
+
+

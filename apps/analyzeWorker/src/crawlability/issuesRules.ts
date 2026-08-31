@@ -1,7 +1,7 @@
-import { PageCrawlabilityAnalysis } from "@repo/config/types/analysesTypes/perPages/pageCrawlability";
+import { PageCrawlabilityAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageCrawlability";
 import { CRAWLABILITY_THRESHOLDS } from "@/crawlability/threshold.js";
 import { CrawlabilityIssueCode } from "@/crawlability/issuesCode.js";
-import { RulesType } from "@repo/config/types/analysesTypes/rulesType";
+import { RulesType } from "@repo/contract/types/analysesTypes/rulesType";
 
 export const crawlabilityIssuesRules: RulesType<PageCrawlabilityAnalysis, CrawlabilityIssueCode>[] = [
     // ===========================
@@ -259,3 +259,4 @@ export const crawlabilityIssuesRules: RulesType<PageCrawlabilityAnalysis, Crawla
             !data.isInSiteMap,
     },
 ];
+

@@ -36,3 +36,4 @@ export type PageCrawlabilityAnalysis = {
   isInSiteMap: boolean
 
 };
+

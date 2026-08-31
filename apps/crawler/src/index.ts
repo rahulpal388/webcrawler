@@ -1,15 +1,15 @@
 import { validateEnv } from "@/utils/validateEnv.js";
 import "dotenv/config";
-import { createRedisConnection } from "@repo/queue/client/client";
-import { crawlConsumerConfig } from "@repo/queue/streams/consumers/crawlConsumer";
-import { createConsumerGroup } from "@repo/queue/client/createConsumerGroup";
-import { urlDeDuplication } from "@repo/queue/stores/deduplication/urlDeDuplication";
+import { createRedisConnection } from "@repo/redis/client/client";
+import { crawlConsumerConfig } from "@repo/redis/streams/consumers/crawlConsumer";
+import { createConsumerGroup } from "@repo/redis/client/createConsumerGroup";
+import { urlDeDuplication } from "@repo/redis/stores/deduplication/urlDeDuplication";
 import { fetchWebPageAndNetworkInfo } from "@/fetchWebPageAndNetworkInfo.js";
-import { RedirectChainType } from "@repo/config/types/urlInformationType/eachUrlNetworkTypes";
+import { RedirectChainType } from "@repo/contract/types/urlInformationType/eachUrlNetworkTypes";
 import { getGatherInformation } from "@/gatherInformation.js";
 import { urlCrawledRepository } from "@repo/db/repository/urlCrawledRepository";
-import { crawlStateStore } from "@repo/queue/stores/crawlState/crawlState";
-import { crawlPublisherConfig } from "@repo/queue/streams/publishers/crawlPublisher";
+import { crawlStateStore } from "@repo/redis/stores/crawlState/crawlState";
+import { crawlPublisherConfig } from "@repo/redis/streams/publishers/crawlPublisher";
 import { isUrlCrawlAllowed } from "@/utils/isUrlCrawlAllowed.js";
 import { connectDB } from "@repo/db/index";
 import { seedUrlRepository } from "@repo/db/repository/seedUrlRepository";
@@ -172,3 +172,5 @@ async function main() {
 }
 
 await main();
+
+

@@ -1,4 +1,4 @@
-import { PageMetaAnalysis } from "@repo/config/types/analysesTypes/perPages/pageMeta";
+import { PageMetaAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageMeta";
 import { RulesType } from "@/types/rulesType.js";
 import { MetaIssueCode } from "@/meta/issuesCode.js";
 
@@ -41,3 +41,4 @@ export const brandingRules: RulesType<
             check: (data) => data.branding.faviconCount > 1,
         },
     ];
+

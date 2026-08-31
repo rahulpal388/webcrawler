@@ -1,4 +1,4 @@
-import { JsonLdBlockType } from "@repo/config/types/urlInformationType/htmlStructureDataTypes";
+import { JsonLdBlockType } from "@repo/contract/types/urlInformationType/htmlStructureDataTypes";
 
 export function getSchemaTypes(jsonLdBlocks: JsonLdBlockType[]): string[] {
   const schemaTypes = new Set<string>();
@@ -25,3 +25,5 @@ export function getSchemaTypes(jsonLdBlocks: JsonLdBlockType[]): string[] {
 
   return [...schemaTypes];
 }
+
+

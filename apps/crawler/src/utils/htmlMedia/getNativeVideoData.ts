@@ -1,5 +1,5 @@
 import * as cheerio from "cheerio";
-import { HTMLVideoType } from "@repo/config/types/urlInformationType/HTMLMediaTypes/htmlVideoType";
+import { HTMLVideoType } from "@repo/contract/types/urlInformationType/HTMLMediaTypes/htmlVideoType";
 
 export function getNativeVideoData($: cheerio.CheerioAPI, baseUrl: URL): HTMLVideoType[] {
   const videos: HTMLVideoType[] = [];
@@ -76,3 +76,5 @@ export function getNativeVideoData($: cheerio.CheerioAPI, baseUrl: URL): HTMLVid
   });
   return videos;
 }
+
+

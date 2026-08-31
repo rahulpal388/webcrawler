@@ -14,3 +14,4 @@ export const OTPTemplate: EmailTemplate = {
   from: `${APP_NAME} <${AUTH_EMAIL}>`,
   subject: "Crawllytics verification code",
 };
+

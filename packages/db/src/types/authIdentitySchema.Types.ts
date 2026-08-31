@@ -2,10 +2,15 @@
 import mongoose from "mongoose";
 
 
-export enum AuthProvidersType {
-    EMAIL = "email",
-    GOOGLE = "google"
-}
+
+export const AuthProvidersEnum = {
+    EMAIL: "EMAIL",
+    GOOGLE: "GOOGLE",
+} as const;
+
+
+
+export type AuthProvidersType = typeof AuthProvidersEnum[keyof typeof AuthProvidersEnum];
 
 export type AuthIdentitySchemaType = {
     userId: mongoose.Types.ObjectId;

@@ -6,3 +6,4 @@ export type RepositoryResponseType<T> =
   | {
       success: false;
     };
+

@@ -15,7 +15,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@repo/config": "*",
+    "@repo/redis": "*",
     "@repo/typescript-config": "*",
     "@types/node": "^22.19.19"
   }

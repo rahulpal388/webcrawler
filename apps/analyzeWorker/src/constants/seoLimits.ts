@@ -11,3 +11,4 @@ export const SEO_LIMITS = {
         maxPixelWidth: 960,
     },
 } as const;
+

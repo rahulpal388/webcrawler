@@ -1,5 +1,5 @@
 import { getLinkData } from "@/utils/links/getLinkData.js";
-import { HTMLLinksType } from "@repo/config/types/urlInformationType/htmlLinksTypes";
+import { HTMLLinksType } from "@repo/contract/types/urlInformationType/htmlLinksTypes";
 
 import * as cheerio from "cheerio";
 
@@ -17,3 +17,5 @@ export function htmlLinksExtractor(
     internalLinks,
   };
 }
+
+

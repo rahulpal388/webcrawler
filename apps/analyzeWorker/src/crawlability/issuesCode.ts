@@ -41,3 +41,4 @@ export const CRAWLABILITY_ISSUE_CODES = {
 
 export type CrawlabilityIssueCode =
     typeof CRAWLABILITY_ISSUE_CODES[keyof typeof CRAWLABILITY_ISSUE_CODES];
+

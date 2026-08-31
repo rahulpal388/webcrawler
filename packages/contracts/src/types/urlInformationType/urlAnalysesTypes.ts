@@ -18,3 +18,4 @@ export type UrlAnalysesType = {
   isDiscoveredViaSiteMap: boolean;
   domainExtension: string | null;
 };
+

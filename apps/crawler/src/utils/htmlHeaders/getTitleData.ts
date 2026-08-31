@@ -1,5 +1,5 @@
 import * as cheerio from "cheerio";
-import { HTMLTitleType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { HTMLTitleType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 
 export function getTitleData($: cheerio.CheerioAPI): HTMLTitleType[] {
   const titleValue: HTMLTitleType[] = [];
@@ -17,3 +17,5 @@ export function getTitleData($: cheerio.CheerioAPI): HTMLTitleType[] {
 
   return titleValue;
 }
+
+

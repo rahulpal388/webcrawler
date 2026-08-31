@@ -31,3 +31,4 @@ export type HTMLImageType = {
   containsKeyword: boolean | null;
   isPreloaded: boolean;
 };
+

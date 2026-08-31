@@ -1,5 +1,5 @@
-import { ViewportAnalysis } from "@repo/config/types/analysesTypes/perPages/pageMeta";
-import { HTMLMetaViewportType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { ViewportAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageMeta";
+import { HTMLMetaViewportType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 
 
 export function analyzeViewport(
@@ -39,3 +39,4 @@ export function analyzeViewport(
         ),
     };
 }
+

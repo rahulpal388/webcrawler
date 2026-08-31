@@ -1,4 +1,4 @@
-import { UserAgentType, RobotsTxtType } from "@repo/config/types/robotsTxtType";
+import { UserAgentType, RobotsTxtType } from "@repo/contract/types/robotsTxtType";
 
 export async function getRobotsTxt(origin: string): Promise<string | null> {
   try {
@@ -66,3 +66,4 @@ export async function extractRobotsTxt(origin: string): Promise<RobotsTxtType | 
     siteMapXMLUrls,
   };
 }
+

@@ -1,5 +1,5 @@
 import * as Cheerio from "cheerio";
-import { StylesheetType } from "@repo/config/types/urlInformationType/performanceSignalTypes";
+import { StylesheetType } from "@repo/contract/types/urlInformationType/performanceSignalTypes";
 
 export function getStyleSheetInfo($: Cheerio.CheerioAPI): StylesheetType[] {
   const styleSheet: StylesheetType[] = [];
@@ -21,3 +21,5 @@ export function getStyleSheetInfo($: Cheerio.CheerioAPI): StylesheetType[] {
 
   return styleSheet;
 }
+
+

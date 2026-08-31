@@ -1,4 +1,4 @@
-import { PageCrawlabilityAnalysis } from "@repo/config/types/analysesTypes/perPages/pageCrawlability";
+import { PageCrawlabilityAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageCrawlability";
 import { GatherInfoType } from "@/types/gatherInfoType.js";
 
 export function crawlabilityData(gatherInfo: GatherInfoType): PageCrawlabilityAnalysis {
@@ -91,3 +91,5 @@ export function crawlabilityData(gatherInfo: GatherInfoType): PageCrawlabilityAn
         isInSiteMap
     }
 }
+
+

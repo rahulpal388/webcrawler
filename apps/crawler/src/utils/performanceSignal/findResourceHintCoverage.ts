@@ -1,4 +1,4 @@
-import { ResourceHintCoverage } from "@repo/config/types/urlInformationType/performanceSignalTypes";
+import { ResourceHintCoverage } from "@repo/contract/types/urlInformationType/performanceSignalTypes";
 import * as Cheerio from "cheerio";
 
 export function findResourceHintCoverage(
@@ -62,3 +62,5 @@ export function findResourceHintCoverage(
     thirdPartyOriginsWithoutHint,
   };
 }
+
+

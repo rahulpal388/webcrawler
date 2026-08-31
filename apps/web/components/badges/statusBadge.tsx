@@ -1,4 +1,4 @@
-import { StatusType } from "@repo/config/types/apiResponseType/issuesTypes";
+import { StatusType } from "@repo/contract/types/apiResponseType/issuesTypes";
 
 const statusItems: Record<
   Exclude<StatusType, "all">,
@@ -40,3 +40,4 @@ export function StatusBadge({
     </>
   );
 }
+

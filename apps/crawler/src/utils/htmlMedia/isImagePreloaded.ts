@@ -20,3 +20,5 @@ export function isImagePreloaded(
 
   return isPreloaded;
 }
+
+

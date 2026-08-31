@@ -1,4 +1,4 @@
-import { MobileHtmlDataType } from "@repo/config/types/urlInformationType/HTMLMobileType";
+import { MobileHtmlDataType } from "@repo/contract/types/urlInformationType/HTMLMobileType";
 import * as cheerio from "cheerio";
 import { getViewport } from "@/utils/mobileHtmlData/getIViewPortData.js";
 import { getManifest } from "@/utils/mobileHtmlData/getManifestData.js";
@@ -24,3 +24,5 @@ export function getMobileHtmlData($: cheerio.CheerioAPI, baseUrl: URL): MobileHt
     mobileAlternateUrl: getAlternateMobileUrl($, baseUrl),
   };
 }
+
+

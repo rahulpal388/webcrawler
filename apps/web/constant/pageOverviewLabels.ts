@@ -1,4 +1,4 @@
-import { CrawlingAndIndexingType, HTTPHeaderType, URLInfoType } from "@repo/config/types/apiResponseType/pages.responseType";
+import { CrawlingAndIndexingType, HTTPHeaderType, URLInfoType } from "@repo/contract/types/apiResponseType/pages.responseType";
 
 
 

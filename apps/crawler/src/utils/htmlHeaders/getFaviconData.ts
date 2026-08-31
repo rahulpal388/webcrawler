@@ -1,5 +1,5 @@
 import * as cheerio from "cheerio";
-import { FaviconType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { FaviconType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 
 export function getFaviconData($: cheerio.CheerioAPI, baseUrl: URL): FaviconType[] {
   const favicons: FaviconType[] = [];
@@ -24,3 +24,5 @@ export function getFaviconData($: cheerio.CheerioAPI, baseUrl: URL): FaviconType
 
   return favicons;
 }
+
+

@@ -1,7 +1,5 @@
 import { CreateEmailOptions } from "resend";
 import { resend } from "../index.js";
-import { ReactElement } from "react";
-import OTPEmail from "../../emails/otp/otpEmail.js";
 
 export function mail() {
   return {
@@ -15,3 +13,4 @@ export function mail() {
 
 const Mail = mail();
 export default Mail;
+

@@ -1,5 +1,5 @@
 import * as cheerio from "cheerio";
-import { HreflangType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { HreflangType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 import { isAbsoluteUrl } from "@/utils/isAbsoluteUrl.js";
 
 /*
@@ -44,3 +44,5 @@ export function getHrefLangData($: cheerio.CheerioAPI, baseUrl: URL): HreflangTy
 
   return hreflangs;
 }
+
+

@@ -1,7 +1,7 @@
-export type AuthenticatedUserInfo = {
+export type AuthenticatedUserType = {
   userId: string;
-  name: string;
   email: string;
-  avatar: string | null;
-  status: string;
+  sessionId:string;
 };
+
+

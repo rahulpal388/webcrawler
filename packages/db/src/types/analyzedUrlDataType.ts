@@ -4,3 +4,4 @@ import mongoose from "mongoose";
 export type AnalyzedUrlType = {
     crawlId: mongoose.Types.ObjectId;
 };
+

@@ -5,11 +5,11 @@ import {
   CompressionEncodingType,
   EachUrlNetworkResultTypes,
   RedirectChainType,
-} from "@repo/config/types/urlInformationType/eachUrlNetworkTypes";
+} from "@repo/contract/types/urlInformationType/eachUrlNetworkTypes";
 import { findCdnProvider } from "@repo/lib/findCdnProvider";
 import { getUnCompressedSize } from "@repo/lib/getUnCompressedSize";
 import https from "https";
-import { headerConfig } from "@repo/config/constant/fetchHeaderConfig";
+import { headerConfig } from "@repo/contract/constant/fetchHeaderConfig";
 
 export async function fetchWebPageAndNetworkInfo(
   url: URL,
@@ -183,3 +183,5 @@ export async function fetchWebPageAndNetworkInfo(
     });
   });
 }
+
+

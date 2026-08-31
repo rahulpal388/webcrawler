@@ -1,15 +1,34 @@
 import { Request, Response, NextFunction } from "express";
 import { logger } from "@repo/lib/logger";
 import { AppError } from "@/shared/error/appError.js";
+import { ZodError } from "zod";
 
 export function errorHandlerMiddleware(err: Error, req: Request, res: Response, next: NextFunction) {
+    if (res.headersSent) {
+        return next(err);
+    }
+    if (err instanceof ZodError) {
+        logger.warn({
+            requestId: req.requestId,
+            message: "Validation Error",
+            path: req.path,
+            metaData: {
+                issues: err.issues,
+            },
+        })
+        return res.status(400).json({
+            message: "Validation Error",
+            issues: err.issues,
+        });
+    }
     if (err instanceof AppError) {
         logger.warn({
+            requestId: req.requestId,
             message: err.message,
             path: req.path,
             metaData: {
                 statusCode: err.statusCode,
-                options: err.options,
+                options: err.details,
             },
         });
 
@@ -19,6 +38,7 @@ export function errorHandlerMiddleware(err: Error, req: Request, res: Response, 
     }
 
     logger.error({
+        requestId: req.requestId,
         message: "Internal Server Error",
         path: req.path,
         metaData: {
@@ -30,3 +50,5 @@ export function errorHandlerMiddleware(err: Error, req: Request, res: Response, 
         message: "Internal Server Error",
     });
 }
+
+

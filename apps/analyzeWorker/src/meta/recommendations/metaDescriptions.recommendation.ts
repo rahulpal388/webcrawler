@@ -107,3 +107,4 @@ export const META_DESCRIPTION_RECOMMENDATIONS = {
         ]
     }
 } as const;
+

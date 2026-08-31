@@ -2,7 +2,7 @@ import {
   ResponseHeadersType,
   HSTSType,
   CacheControlType,
-} from "@repo/config/types/urlInformationType/responseHeadersTypes";
+} from "@repo/contract/types/urlInformationType/responseHeadersTypes";
 import { IncomingMessage } from "node:http";
 
 export function parseResponseHeader(res: IncomingMessage): ResponseHeadersType {
@@ -102,3 +102,5 @@ export function parseResponseHeader(res: IncomingMessage): ResponseHeadersType {
     vary,
   };
 }
+
+

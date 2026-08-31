@@ -1,7 +1,7 @@
 
 import { CRAWLABILITY_DOCUMENTATION } from "@/crawlability/documentation.js";
 import { CRAWLABILITY_ISSUE_CODES, CrawlabilityIssueCode } from "./issuesCode.js";
-import { RecommendationType } from "@repo/config/types/analysesTypes/recommendationTypes";
+import { RecommendationType } from "@repo/contract/types/analysesTypes/recommendationTypes";
 
 export const crawlabilityRecommendations: Record<
     CrawlabilityIssueCode,
@@ -254,3 +254,4 @@ export const crawlabilityRecommendations: Record<
         documentationLinks: CRAWLABILITY_DOCUMENTATION.XML_SITEMAPS
     },
 };
+

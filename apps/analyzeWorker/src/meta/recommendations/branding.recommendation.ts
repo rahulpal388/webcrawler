@@ -49,3 +49,4 @@ export const BRANDING_RECOMMENDATIONS = {
         ]
     }
 } as const;
+

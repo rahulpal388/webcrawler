@@ -5,3 +5,4 @@ export type HTMLAudioType = {
   autoplay: boolean;
   preload: "auto" | "metadata" | "none" | null;
 };
+

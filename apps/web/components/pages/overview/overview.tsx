@@ -1,4 +1,4 @@
-import { overviewTempData } from "@repo/config/constant/responseConstant/pages/overviewTempdata";
+import { overviewTempData } from "@repo/contract/constant/responseConstant/pages/overviewTempdata";
 import {
   pageOverviewURLInfoLabels,
   pageOverviewHTTPHeaderLabels,
@@ -46,3 +46,4 @@ export function Overview() {
     </div>
   );
 }
+

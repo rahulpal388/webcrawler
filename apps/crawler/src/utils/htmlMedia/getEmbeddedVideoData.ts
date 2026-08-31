@@ -1,4 +1,4 @@
-import { HTMLVideoType } from "@repo/config/types/urlInformationType/HTMLMediaTypes/htmlVideoType";
+import { HTMLVideoType } from "@repo/contract/types/urlInformationType/HTMLMediaTypes/htmlVideoType";
 
 import * as cheerio from "cheerio";
 
@@ -60,3 +60,5 @@ export function getEmbeddedVideoData($: cheerio.CheerioAPI, baseUrl: URL): HTMLV
 
   return videos;
 }
+
+

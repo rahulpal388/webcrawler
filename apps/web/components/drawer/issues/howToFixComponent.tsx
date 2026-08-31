@@ -1,7 +1,7 @@
 import {
   HowToFixType,
   StackType,
-} from "@repo/config/types/apiResponseType/issuesTypes";
+} from "@repo/contract/types/apiResponseType/issuesTypes";
 import { CodeSnippet } from "../../codeSnippet";
 import { ChooseStackComponent } from "./chooseStackComponent";
 import { useState } from "react";
@@ -42,3 +42,4 @@ export function HowToFixComponent({ howToFix }: { howToFix: HowToFixType }) {
     </>
   );
 }
+

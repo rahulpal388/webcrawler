@@ -21,3 +21,5 @@ export function getAppleTouchIcons($: cheerio.CheerioAPI, baseUrl: URL) {
     appleTouchIcons,
   };
 }
+
+

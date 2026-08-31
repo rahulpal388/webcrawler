@@ -12,3 +12,5 @@ export function getMobileWebAppMeta($: cheerio.CheerioAPI) {
       $('meta[name="apple-mobile-web-app-status-bar-style"]').attr("content") ?? null,
   };
 }
+
+

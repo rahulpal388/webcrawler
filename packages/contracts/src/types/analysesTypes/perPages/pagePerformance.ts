@@ -29,3 +29,4 @@ export type PerformanceAnalysis = {
   preloadCount: number;
   prefetchCount: number;
 };
+

@@ -1,4 +1,4 @@
-import { ImpactType } from "@repo/config/types/apiResponseType/issuesTypes";
+import { ImpactType } from "@repo/contract/types/apiResponseType/issuesTypes";
 
 const impactBadges: Record<
   Exclude<ImpactType, "all">,
@@ -37,3 +37,4 @@ export function ImpactBadges({
     </>
   );
 }
+

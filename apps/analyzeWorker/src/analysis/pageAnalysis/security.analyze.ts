@@ -1,5 +1,5 @@
 import { GatherInfoType } from "@/types/gatherInfoType.js";
-import { PageSecurityAnalysis } from "@repo/config/types/analysesTypes/perPages/pageSecurity";
+import { PageSecurityAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageSecurity";
 
 export function securityAnalysis(gatherInfo: GatherInfoType): PageSecurityAnalysis {
   const httpsEnabled = gatherInfo.networkInfo.protocol === "https";
@@ -22,3 +22,5 @@ export function securityAnalysis(gatherInfo: GatherInfoType): PageSecurityAnalys
     permissionsPolicyPresent,
   };
 }
+
+

@@ -15,3 +15,4 @@ export type MobileHtmlDataType = {
   ampUrl: string | null;
   mobileAlternateUrl: string | null;
 };
+

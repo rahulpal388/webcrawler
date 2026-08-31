@@ -1,6 +1,6 @@
 import { SEO_LIMITS } from "@/constants/seoLimits.js";
-import { MetaDescriptionAnalysis } from "@repo/config/types/analysesTypes/perPages/pageMeta";
-import { HTMLMetaDescriptionType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { MetaDescriptionAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageMeta";
+import { HTMLMetaDescriptionType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 
 export function analyzeMetaDescription(
     metaDescriptions: HTMLMetaDescriptionType[]
@@ -51,3 +51,4 @@ export function analyzeMetaDescription(
             SEO_LIMITS.metaDescription.maxPixelWidth,
     };
 }
+

@@ -1,0 +1,23 @@
+{
+  "name": "@repo/redis",
+  "version": "0.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    "./*": "./src/*.ts"
+  },
+  "scripts": {},
+  "devDependencies": {
+    "@repo/redis": "*",
+    "@repo/lib": "*",
+    "@repo/typescript-config": "*",
+    "@types/redis": "^4.0.10",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "redis": "^5.12.1"
+  }
+}

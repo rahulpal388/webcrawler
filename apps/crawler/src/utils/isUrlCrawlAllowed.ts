@@ -1,5 +1,5 @@
-import { USER_AGENT } from "@repo/config/constant/fetchHeaderConfig";
-import { UserAgentType } from "@repo/config/types/robotsTxtType";
+import { USER_AGENT } from "@repo/contract/constant/fetchHeaderConfig";
+import { UserAgentType } from "@repo/contract/types/robotsTxtType";
 
 export function isUrlCrawlAllowed(url: string, robotsTxt: UserAgentType[]): boolean {
   if (robotsTxt.length === 0) {
@@ -43,3 +43,5 @@ export function isUrlCrawlAllowed(url: string, robotsTxt: UserAgentType[]): bool
 
   return longestMatchType !== "disallow";
 }
+
+

@@ -31,3 +31,4 @@ export type RulesType<T, TCode extends string = string> =
         check: (data: T) => boolean;
     };
 
+

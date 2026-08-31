@@ -33,3 +33,4 @@ export const videoSchema = new mongoose.Schema<HTMLVideoType>(videoSchemaDefinat
   versionKey: false,
   strict: true,
 });
+

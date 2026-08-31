@@ -1,4 +1,4 @@
-import { JsonLdBlockType } from "@repo/config/types/urlInformationType/htmlStructureDataTypes";
+import { JsonLdBlockType } from "@repo/contract/types/urlInformationType/htmlStructureDataTypes";
 
 export function getFaqCount(jsonLdBlocks: JsonLdBlockType[]): number {
   let count = 0;
@@ -21,3 +21,5 @@ export function getFaqCount(jsonLdBlocks: JsonLdBlockType[]): number {
 
   return count;
 }
+
+

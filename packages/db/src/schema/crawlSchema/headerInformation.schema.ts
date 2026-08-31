@@ -201,3 +201,4 @@ export const headerInformationSchema = new mongoose.Schema<HTMLHeaderType>(
   headerInformationSchemaDefinition,
   { _id: false, versionKey: false, strict: true },
 );
+

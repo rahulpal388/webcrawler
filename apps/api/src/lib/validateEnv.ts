@@ -1,5 +1,4 @@
-import { envSchema } from "@/validation/envTypes.js";
-import e from "express";
+import { envSchema } from "@/shared/types/envTypes.js";
 
 export function ValidateEnv() {
   const { success, data, error } = envSchema.safeParse(process.env);
@@ -11,3 +10,5 @@ export function ValidateEnv() {
 
   return data;
 }
+
+

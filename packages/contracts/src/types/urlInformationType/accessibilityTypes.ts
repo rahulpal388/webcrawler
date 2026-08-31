@@ -10,3 +10,4 @@ export type AccessibilityType = {
   //  linksOpenNewTabWithoutWarning: number;
   tablesMissingHeaders: number;
 };
+

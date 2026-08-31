@@ -46,3 +46,4 @@ export type ResourceHintCoverage = {
   prefetchCount: number;
   thirdPartyOriginsWithoutHint: string[];
 };
+

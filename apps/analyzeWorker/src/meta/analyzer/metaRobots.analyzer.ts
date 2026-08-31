@@ -1,4 +1,4 @@
-import { MetaRobotsAnalysis } from "@repo/config/types/analysesTypes/perPages/pageMeta";
+import { MetaRobotsAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageMeta";
 
 
 export function analyzeMetaRobots(
@@ -39,3 +39,4 @@ export function analyzeMetaRobots(
             (values.has("follow") && values.has("nofollow"))
     };
 }
+

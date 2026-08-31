@@ -11,3 +11,4 @@ export function DashboardContainer({
     <div className={cn("h-full w-full  gap-4 overflow-y-auto p-8", className)}>{children}</div>
   );
 }
+

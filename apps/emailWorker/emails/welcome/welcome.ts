@@ -12,3 +12,4 @@ export const WelcomeTemplate: EmailTemplate = {
   from: `SEO Analyzer <${ACCOUNT_EMAIL}>`,
   subject: "Welcome to SEO Analyzer",
 };
+

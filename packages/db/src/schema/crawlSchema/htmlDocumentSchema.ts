@@ -23,3 +23,4 @@ export const htmlDocumentSchema = new Schema<HTMLDocumentType>(htmlDocumentSchem
   versionKey: false,
   strict: true,
 });
+

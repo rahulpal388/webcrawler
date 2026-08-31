@@ -1,6 +1,6 @@
 import { SEO_LIMITS } from "@/constants/seoLimits.js";
-import { TitleAnalysis } from "@repo/config/types/analysesTypes/perPages/pageMeta";
-import { HTMLTitleType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { TitleAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageMeta";
+import { HTMLTitleType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 
 
 export function analyzeTitle(title: HTMLTitleType[]): TitleAnalysis {
@@ -41,3 +41,4 @@ export function analyzeTitle(title: HTMLTitleType[]): TitleAnalysis {
             titleLengthPixel > SEO_LIMITS.title.maxPixelWidth,
     };
 }
+

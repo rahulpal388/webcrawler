@@ -1,38 +1,32 @@
 
-import { crawlStateStore } from "@repo/queue/stores/crawlState/crawlState";
-import { crawlPublisherConfig } from "@repo/queue/streams/publishers/crawlPublisher";
-import { emailPublisherConfig } from "@repo/queue/streams/publishers/emailPublisher";
-
-import { urlDeDuplication } from "@repo/queue/stores/deduplication/urlDeDuplication";
-import { oidcStatesStore } from "@repo/queue/stores/authStates/oidcStatesStore";
-import { sessionStoreConfig } from "@repo/queue/stores/authStates/sessionStore";
-import { userOtpStore } from "@repo/queue/stores/authStates/userOtpStore";
-
-import { sortedSetStoreConfig } from "@repo/queue/stores/sortedSetStore";
-import { HashesStoreConfig } from "@repo/queue/stores/hashesStore";
-import redisClient from "@/infrastructure/redis/client.js";
+import { crawlStateStore } from "@repo/redis/stores/crawlState/crawlState";
+import { crawlPublisherConfig } from "@repo/redis/streams/publishers/crawlPublisher";
+import { emailPublisherConfig } from "@repo/redis/streams/publishers/emailPublisher";
+import { urlDeDuplication } from "@repo/redis/stores/deduplication/urlDeDuplication";
+import { HashStoreConfig } from "@repo/redis/stores/hashStore";
+import { sortedSetStoreConfig } from "@repo/redis/stores/sortedSetStore";
+import { RedisClientType } from "redis";
 
 
-export const crawlStateSt = crawlStateStore(redisClient);
 
-export const crawlPublisher = crawlPublisherConfig(redisClient);
+export function initilizeRedisStores(redisClient: RedisClientType) {
+    return {
 
-export const emailPublisher = emailPublisherConfig(redisClient);
+        crawlStateSt: crawlStateStore(redisClient),
 
-export const urlDeDuplicationStore =
-    urlDeDuplication(redisClient);
+        crawlPublisher: crawlPublisherConfig(redisClient),
 
-export const oidcStore =
-    oidcStatesStore(redisClient);
+        emailPublisher: emailPublisherConfig(redisClient),
 
-export const sessionStore =
-    sessionStoreConfig(redisClient);
+        urlDeDuplicationStore:
+            urlDeDuplication(redisClient),
 
-export const OTPStore =
-    userOtpStore(redisClient);
 
-export const sortedSetStore =
-    sortedSetStoreConfig(redisClient);
+        sortedSetStore:
+            sortedSetStoreConfig(redisClient),
 
-export const hashesStore =
-    HashesStoreConfig(redisClient);
+        hashStore:
+            HashStoreConfig(redisClient),
+    }
+
+}

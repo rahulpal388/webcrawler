@@ -16,3 +16,4 @@ const UserAgentSchema = new Schema<UserAgentType>(userAgentSchemaDefinition, {
 
 
 export default UserAgentSchema;
+

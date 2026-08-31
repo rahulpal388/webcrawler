@@ -45,3 +45,4 @@ export function StatusCodeBadge({ statusCode }: { statusCode: number }) {
     </>
   );
 }
+

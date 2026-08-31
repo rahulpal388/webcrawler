@@ -1,6 +1,6 @@
 import { MetaIssueCode } from "@/meta/issuesCode.js";
 import { RulesType } from "@/types/rulesType.js";
-import { PageMetaAnalysis } from "@repo/config/types/analysesTypes/perPages/pageMeta";
+import { PageMetaAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageMeta";
 
 export const alternateRules: RulesType<
     PageMetaAnalysis,
@@ -24,3 +24,4 @@ export const alternateRules: RulesType<
             check: (data) => data.alternate.alternateCount > 1,
         },
     ];
+

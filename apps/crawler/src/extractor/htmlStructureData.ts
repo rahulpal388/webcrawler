@@ -1,6 +1,6 @@
 import { getJsonLdBlocks } from "@/utils/structuredData/getJsonLdBlock.js";
 import { getBreadcrumbs } from "@/utils/structuredData/getBreadCrumbItem.js";
-import { HTMLStructureDataType } from "@repo/config/types/urlInformationType/htmlStructureDataTypes";
+import { HTMLStructureDataType } from "@repo/contract/types/urlInformationType/htmlStructureDataTypes";
 import { getSchemaCounts } from "@/utils/structuredData/getSchemaCount.js";
 import { getHasMicrodata } from "@/utils/structuredData/getHasMicroData.js";
 import { getHasRdfa } from "@/utils/structuredData/getHasRdfa.js";
@@ -45,3 +45,5 @@ export function htmlStructureData($: cheerio.CheerioAPI): HTMLStructureDataType 
     personCount: counts.personCount,
   };
 }
+
+

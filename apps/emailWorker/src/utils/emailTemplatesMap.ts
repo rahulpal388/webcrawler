@@ -1,6 +1,7 @@
-import { EmailType } from "@repo/queue/types/emailStreamMessageType";
+import { EmailTypes } from "@repo/redis/types/emailStreamMessageType";
 import { OTPTemplate } from "../../emails/otp/otp.js";
 
 export const EmailTemplateMap = {
-  [EmailType.OTP]: OTPTemplate,
+  [EmailTypes.OTP]: OTPTemplate,
 };
+

@@ -1,4 +1,4 @@
-import { HTMLHeaderType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { HTMLHeaderType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 import * as cheerio from "cheerio";
 import { getCanonicalData } from "@/utils/htmlHeaders/getCanonicalData.js";
 import { getMetaViewportData } from "@/utils/htmlHeaders/getMetaViewportData.js";
@@ -50,3 +50,5 @@ export function htmlHeaderExtractor($: cheerio.CheerioAPI, url: URL): HTMLHeader
     manifest,
   };
 }
+
+

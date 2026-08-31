@@ -1,6 +1,6 @@
 import crypto from "node:crypto";
 
-import { sortedSetStoreConfig } from "@repo/queue/stores/sortedSetStore";
+import { sortedSetStoreConfig } from "@repo/redis/stores/sortedSetStore";
 
 import { RateLimitReturnType } from "../types/RateLimiteReturnType";
 import { SlidingWindowPolicyType } from "../types/silidingWindowPolicy";

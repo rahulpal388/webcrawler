@@ -1,6 +1,6 @@
 import { model } from "mongoose";
-import LogActivitySchema from "../schema/logActivity/logActivity.schema.js";
+import LoginActivitySchema from "../schema/logActivity/logActivity.schema.js";
 
-const LogActivityModel = model("LogActivity", LogActivitySchema);
+const logActivityModel = model("LogActivity", LoginActivitySchema);
 
-export default LogActivityModel;
+export default logActivityModel;

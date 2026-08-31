@@ -5,7 +5,7 @@ import { Schema } from "mongoose";
 
 
 const LocationSchemaDefination: SchemaOf<LocationType> = {
-    country: { type: String, required: true },
+    country: { type: String, default: null },
     region: { type: String, default: null },
     city: { type: String, default: null }
 }

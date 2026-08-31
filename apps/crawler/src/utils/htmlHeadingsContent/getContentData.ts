@@ -1,6 +1,6 @@
 import crypto from "node:crypto";
 import * as cheerio from "cheerio";
-import { HTMLContentType } from "@repo/config/types/urlInformationType/htmlHeadingContentsTypes";
+import { HTMLContentType } from "@repo/contract/types/urlInformationType/htmlHeadingContentsTypes";
 
 export function getContentData($: cheerio.CheerioAPI): HTMLContentType {
   // Clone the document so we don't mutate the original Cheerio instance
@@ -25,3 +25,5 @@ export function getContentData($: cheerio.CheerioAPI): HTMLContentType {
     contentHash,
   };
 }
+
+

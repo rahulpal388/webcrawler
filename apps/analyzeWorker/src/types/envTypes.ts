@@ -1,3 +1,5 @@
-import { globalEnv } from "@repo/config/globalEnv";
+import { globalEnv } from "@repo/contract/globalEnv";
 
 export const envSchema = globalEnv.extend({});
+
+

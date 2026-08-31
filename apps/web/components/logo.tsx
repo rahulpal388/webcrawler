@@ -32,3 +32,4 @@ export function Logo({ variants = "full" }: LogoProps) {
     </>
   );
 }
+

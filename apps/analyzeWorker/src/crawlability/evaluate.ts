@@ -2,7 +2,7 @@ import { crawlabilityData } from "@/crawlability/crawlabilityData.js";
 import { GatherInfoType } from "@/types/gatherInfoType.js";
 import { crawlabilityRecommendations } from "@/crawlability/recommendations.js";
 import { crawlabilityIssuesRules } from "@/crawlability/issuesRules.js";
-import { FindingsType, EvaluateType } from "@repo/config/types/analysesTypes/evaluteTypes";
+import { FindingsType, EvaluateType } from "@repo/contract/types/analysesTypes/evaluteTypes";
 
 
 export function evaluateCrawlabilityRules(info: GatherInfoType): EvaluateType {
@@ -36,3 +36,4 @@ export function evaluateCrawlabilityRules(info: GatherInfoType): EvaluateType {
     }
 
 };
+

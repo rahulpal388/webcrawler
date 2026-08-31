@@ -1,4 +1,4 @@
-import { SeverityType } from "@repo/config/types/apiResponseType/issuesTypes";
+import { SeverityType } from "@repo/contract/types/apiResponseType/issuesTypes";
 
 const severityItems: Record<
   Exclude<SeverityType, "all">,
@@ -53,3 +53,4 @@ export function SeverityBadges({
     </>
   );
 }
+

@@ -11,3 +11,4 @@ export type PageHeadingAnalysis = {
 
   duplicateH1: boolean;
 };
+

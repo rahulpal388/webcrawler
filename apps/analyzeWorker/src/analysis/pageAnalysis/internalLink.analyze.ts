@@ -1,5 +1,5 @@
 import { GatherInfoType } from "@/types/gatherInfoType.js";
-import { PageInternalLinkAnalysis } from "@repo/config/types/analysesTypes/perPages/pageInternalLink";
+import { PageInternalLinkAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageInternalLink";
 
 export function internalLink(gatherInfo: GatherInfoType): PageInternalLinkAnalysis {
   let internalLinkCount = 0;
@@ -27,3 +27,5 @@ export function internalLink(gatherInfo: GatherInfoType): PageInternalLinkAnalys
     urlDepth,
   };
 }
+
+

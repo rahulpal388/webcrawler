@@ -14,3 +14,4 @@ export const accessibilitySchema = new Schema<AccessibilityType>(accessibilitySc
   versionKey: false,
   strict: true,
 });
+

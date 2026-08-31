@@ -1,5 +1,5 @@
 import zlib from "zlib";
-import { CompressionEncodingType } from "@repo/config/types/urlInformationType/eachUrlNetworkTypes";
+import { CompressionEncodingType } from "@repo/contract/types/urlInformationType/eachUrlNetworkTypes";
 
 export function getUnCompressedSize(buffer: Buffer[], encoding: CompressionEncodingType): number {
   const compressedBuffer = Buffer.concat(buffer);
@@ -18,3 +18,4 @@ export function getUnCompressedSize(buffer: Buffer[], encoding: CompressionEncod
 
   return decompressed.length;
 }
+

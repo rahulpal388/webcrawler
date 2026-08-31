@@ -1,5 +1,5 @@
-import { ResourceHintsAnalysis } from "@repo/config/types/analysesTypes/perPages/pageMeta";
-import { ResourceHintType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { ResourceHintsAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageMeta";
+import { ResourceHintType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 
 
 
@@ -36,3 +36,4 @@ export function analyzeResourceHints(
         ),
     };
 }
+

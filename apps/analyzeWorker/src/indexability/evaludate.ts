@@ -1,7 +1,7 @@
 import { indexabilityData } from "@/indexability/indexabilityData.js";
 import { indexabilityIssuesRules } from "@/indexability/issuesRules.js";
 import { indexabilityRecommendations } from "@/indexability/recommendations.js";
-import { EvaluateType, FindingsType } from "@repo/config/types/analysesTypes/evaluteTypes";
+import { EvaluateType, FindingsType } from "@repo/contract/types/analysesTypes/evaluteTypes";
 import { GatherInfoType } from "@/types/gatherInfoType.js";
 
 
@@ -36,3 +36,4 @@ export function evaluateIndexability(info: GatherInfoType): EvaluateType {
         findings
     }
 }
+

@@ -1,9 +1,9 @@
-import { EachUrlNetworkResultTypes } from "@repo/config/types/urlInformationType/eachUrlNetworkTypes";
-import { HTMLHeaderType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
-import { UrlAnalysesType } from "@repo/config/types/urlInformationType/urlAnalysesTypes";
-import { ResponseHeadersType } from "@repo/config/types/urlInformationType/responseHeadersTypes";
+import { EachUrlNetworkResultTypes } from "@repo/contract/types/urlInformationType/eachUrlNetworkTypes";
+import { HTMLHeaderType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
+import { UrlAnalysesType } from "@repo/contract/types/urlInformationType/urlAnalysesTypes";
+import { ResponseHeadersType } from "@repo/contract/types/urlInformationType/responseHeadersTypes";
 
-import { CrawlabilityPerPage } from "@repo/config/types/analysesTypes/crawlabilityTypesPerPage";
+import { CrawlabilityPerPage } from "@repo/contract/types/analysesTypes/crawlabilityTypesPerPage";
 
 export function getCrawlability(
   urlInfo: EachUrlNetworkResultTypes,
@@ -33,3 +33,5 @@ export function getCrawlability(
     crawlabilityScore: 0, // 0-100
   };
 }
+
+

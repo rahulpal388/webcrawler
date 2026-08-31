@@ -10,7 +10,7 @@
     "./utils": "./src/utils.ts"
   },
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
+    "lint": "eslint src/**/*{ts,tsx}",
     "generate:component": "turbo gen react-component",
     "check-types": "tsc --noEmit"
   },

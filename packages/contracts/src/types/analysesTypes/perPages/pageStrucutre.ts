@@ -16,3 +16,4 @@ export type StructuredDataAnalysis = {
   hasBreadcrumbSchema: boolean;
   hasFaqSchema: boolean;
 };
+

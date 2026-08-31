@@ -1,5 +1,5 @@
-import { OpenGraphAnalysis } from "@repo/config/types/analysesTypes/perPages/pageMeta";
-import { HTMLOpenGraphType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { OpenGraphAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageMeta";
+import { HTMLOpenGraphType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 
 
 
@@ -29,3 +29,4 @@ export function analyzeOpenGraph(
         hasOgLocale: og.locale !== null,
     };
 }
+

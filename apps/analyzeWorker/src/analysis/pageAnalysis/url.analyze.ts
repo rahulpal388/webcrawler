@@ -1,5 +1,5 @@
 import { SEOIssues } from "@/types/seoIssuesTypes.js";
-import { UrlAnalysesType } from "@repo/config/types/urlInformationType/urlAnalysesTypes";
+import { UrlAnalysesType } from "@repo/contract/types/urlInformationType/urlAnalysesTypes";
 import { URL_RULES } from "@/rules/urlRules.js";
 
 export function urlAnalyse(urlInfomation: UrlAnalysesType): SEOIssues[] {
@@ -17,3 +17,5 @@ export function urlAnalyse(urlInfomation: UrlAnalysesType): SEOIssues[] {
 
   return issues;
 }
+
+

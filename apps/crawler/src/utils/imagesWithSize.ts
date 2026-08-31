@@ -1,6 +1,6 @@
 import { findImages } from "@/utils/findImages.js";
 import { getImageSize } from "@/utils/getImageSize.js";
-import { ImageType } from "@repo/config/types/urlInformationType/htmlMediaTypes";
+import { ImageType } from "@repo/contract/types/urlInformationType/htmlMediaTypes";
 import * as Cheerio from "cheerio";
 
 const BATCH_SIZE = 10; // Number of images to process in parallel
@@ -25,3 +25,5 @@ export async function imagesWithSize(
 
   return images;
 }
+
+

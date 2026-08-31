@@ -28,3 +28,4 @@ export const urlAnalysesSchema = new Schema<UrlAnalysesType>(urlAnalysesSchemaDe
   versionKey: false,
   strict: true,
 });
+

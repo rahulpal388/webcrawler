@@ -1,6 +1,6 @@
 import { DASHBOARD_URL, SUPPORT_EMAIL } from "@/config/config.js";
 import { render } from "@react-email/render";
-import { EmailStreamMessageType, EmailType } from "@repo/queue/types/emailStreamMessageType";
+import { EmailStreamMessageType, EmailType } from "@repo/redis/types/emailStreamMessageType";
 import { createElement } from "react";
 import WelcomeEmail from "./welcomeEmail.js";
 import Mail from "@/utils/mail.js";

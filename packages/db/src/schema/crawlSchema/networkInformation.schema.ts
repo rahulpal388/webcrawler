@@ -90,3 +90,4 @@ export const urlNetworkSchema = new Schema<EachUrlNetworkResultTypes>(urlNetwork
   versionKey: false,
   strict: true,
 });
+

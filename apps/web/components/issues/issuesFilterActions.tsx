@@ -6,7 +6,7 @@ import {
   CategoryType,
   StatusType,
   ImpactType,
-} from "@repo/config/types/apiResponseType/issuesTypes";
+} from "@repo/contract/types/apiResponseType/issuesTypes";
 import { Button } from "@repo/ui/components/button";
 import { Download } from "lucide-react";
 
@@ -126,3 +126,4 @@ export function IssuesFilterActions({
     </>
   );
 }
+

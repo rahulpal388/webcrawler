@@ -1,6 +1,6 @@
 import { APP_NAME, SUPPORT_EMAIL } from "@/config/config.js";
 import { render } from "@react-email/render";
-import { EmailStreamMessageType, EmailType } from "@repo/queue/types/emailStreamMessageType";
+import { EmailStreamMessageType, } from "@repo/redis/types/emailStreamMessageType";
 import { createElement } from "react";
 import OTPEmail from "./otpEmail.js";
 import Mail from "@/utils/mail.js";
@@ -8,7 +8,8 @@ import { OTPTemplate } from "./otp.js";
 
 
 
-export async function sendOTPMail(msg: EmailStreamMessageType<EmailType.OTP>) {
+
+export async function sendOTPMail(msg: EmailStreamMessageType<"otp">) {
     const emailPayload = {
         username: msg.payload.username,
         appName: APP_NAME,

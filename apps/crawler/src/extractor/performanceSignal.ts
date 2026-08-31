@@ -1,5 +1,5 @@
 import * as Cheerio from "cheerio";
-import { PerformanceSignalType } from "@repo/config/types/urlInformationType/performanceSignalTypes";
+import { PerformanceSignalType } from "@repo/contract/types/urlInformationType/performanceSignalTypes";
 
 import { getScriptInfo } from "@/utils/performanceSignal/getScriptInfo.js";
 import { getStyleSheetInfo } from "@/utils/performanceSignal/getStyleSheetInfo.js";
@@ -66,3 +66,5 @@ export function performanceSignal($: Cheerio.CheerioAPI, url: URL): PerformanceS
     hasPwaManifest,
   };
 }
+
+

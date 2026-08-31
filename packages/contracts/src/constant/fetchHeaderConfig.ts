@@ -7,3 +7,4 @@ export const headerConfig = {
   "user-agent": USER_AGENT,
   Accept: "application/xml,text/xml,*/*",
 };
+

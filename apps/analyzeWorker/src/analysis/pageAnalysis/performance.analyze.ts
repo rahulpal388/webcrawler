@@ -1,5 +1,5 @@
 import { GatherInfoType } from "@/types/gatherInfoType.js";
-import { PerformanceAnalysis } from "@repo/config/types/analysesTypes/perPages/pagePerformance";
+import { PerformanceAnalysis } from "@repo/contract/types/analysesTypes/perPages/pagePerformance";
 
 export function performanceAnalysis(gatherInfo: GatherInfoType): PerformanceAnalysis {
   const ttfb = gatherInfo.networkInfo.timeToFirstByte;
@@ -42,3 +42,5 @@ export function performanceAnalysis(gatherInfo: GatherInfoType): PerformanceAnal
     prefetchCount,
   };
 }
+
+

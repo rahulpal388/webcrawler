@@ -1,4 +1,4 @@
-import { IssuesResponseType } from "@repo/config/types/apiResponseType/issuesTypes";
+import { IssuesResponseType } from "@repo/contract/types/apiResponseType/issuesTypes";
 import { Button } from "@repo/ui/components/button";
 import { useDrawerStore } from "../../store/drawerStore";
 
@@ -23,3 +23,4 @@ export function IssuesTableActions({ row }: { row: IssuesResponseType }) {
     </>
   );
 }
+

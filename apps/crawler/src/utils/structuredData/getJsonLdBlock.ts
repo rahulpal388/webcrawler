@@ -1,4 +1,4 @@
-import { JsonLdBlockType } from "@repo/config/types/urlInformationType/htmlStructureDataTypes";
+import { JsonLdBlockType } from "@repo/contract/types/urlInformationType/htmlStructureDataTypes";
 import * as cheerio from "cheerio";
 
 export function getJsonLdBlocks($: cheerio.CheerioAPI): JsonLdBlockType[] {
@@ -46,3 +46,5 @@ export function getJsonLdBlocks($: cheerio.CheerioAPI): JsonLdBlockType[] {
 
   return blocks;
 }
+
+

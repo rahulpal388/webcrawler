@@ -1,6 +1,6 @@
 import { RulesType } from "@/types/rulesType.js";
 import { MetaIssueCode } from "@/meta/issuesCode.js";
-import { PageMetaAnalysis } from "@repo/config/types/analysesTypes/perPages/pageMeta";
+import { PageMetaAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageMeta";
 
 export const titleRules: RulesType<
     PageMetaAnalysis,
@@ -91,3 +91,4 @@ export const titleRules: RulesType<
                 data.title.titleCount > 60,
         },
     ];
+

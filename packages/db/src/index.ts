@@ -14,3 +14,4 @@ export async function connectDB(dbUrl: string): Promise<{
     return { success: false };
   }
 }
+

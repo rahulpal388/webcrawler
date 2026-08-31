@@ -26,3 +26,4 @@ export type UrlCrawledType = {
   htmlDocument: HTMLDocumentType;
   accessibility: AccessibilityType;
 };
+

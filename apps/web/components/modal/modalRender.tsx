@@ -10,3 +10,4 @@ export function ModalRender() {
   const Modal = modalRegistry[modalType];
   return <Modal />;
 }
+

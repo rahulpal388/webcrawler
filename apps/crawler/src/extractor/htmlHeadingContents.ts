@@ -1,5 +1,5 @@
 import * as cheerio from "cheerio";
-import { HTMLHeadingContentType } from "@repo/config/types/urlInformationType/htmlHeadingContentsTypes";
+import { HTMLHeadingContentType } from "@repo/contract/types/urlInformationType/htmlHeadingContentsTypes";
 import { getContentData } from "@/utils/htmlHeadingsContent/getContentData.js";
 import { getHeadingData } from "@/utils/htmlHeadingsContent/getHeadingData.js";
 
@@ -12,3 +12,5 @@ export function htmlHeadingContentsExtractor($: cheerio.CheerioAPI): HTMLHeading
     content,
   };
 }
+
+

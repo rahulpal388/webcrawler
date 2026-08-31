@@ -1,7 +1,7 @@
 import * as cheerio from "cheerio";
 import path from "node:path";
 
-import { HTMLImageType } from "@repo/config/types/urlInformationType/HTMLMediaTypes/htmlImagesType";
+import { HTMLImageType } from "@repo/contract/types/urlInformationType/HTMLMediaTypes/htmlImagesType";
 import { getImageFormate } from "@/utils/htmlMedia/getImageFormate.js";
 import { isImagePreloaded } from "@/utils/htmlMedia/isImagePreloaded.js";
 import { getImageSrcSet } from "@/utils/htmlMedia/getImageSrcSet.js";
@@ -101,3 +101,5 @@ export function getImageData($: cheerio.CheerioAPI, baseUrl: URL): HTMLImageType
 
   return images;
 }
+
+

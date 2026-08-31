@@ -1,7 +1,7 @@
 
 import { RateLimitReturnType } from "..//types/RateLimiteReturnType";
 import { TokenBucketPolicyType } from "..//types/tokenBucketType";
-import { HashesStoreConfig } from "@repo/queue/stores/hashesStore";
+import { HashesStoreConfig } from "@repo/redis/stores/hashesStore";
 
 export class TokenBucket {
 

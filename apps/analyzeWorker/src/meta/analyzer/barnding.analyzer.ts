@@ -1,5 +1,5 @@
-import { BrandingAnalysis } from "@repo/config/types/analysesTypes/perPages/pageMeta";
-import { FaviconType } from "@repo/config/types/urlInformationType/htmlHeaderResponseTypes";
+import { BrandingAnalysis } from "@repo/contract/types/analysesTypes/perPages/pageMeta";
+import { FaviconType } from "@repo/contract/types/urlInformationType/htmlHeaderResponseTypes";
 
 
 
@@ -17,3 +17,4 @@ export function analyzeBranding(
         faviconCount: favicons.length,
     };
 }
+

@@ -20,3 +20,4 @@ export function Badges({ text, type, className }: BadgesProps) {
     </span>
   );
 }
+
