@@ -39,7 +39,7 @@ export function errorHandlerMiddleware(err: Error, req: Request, res: Response, 
 
     logger.error({
         requestId: req.requestId,
-        message: "Internal Server Error",
+        message: err.message ?? "Internal Server Error",
         path: req.path,
         metaData: {
             statusCode: 500,
@@ -48,6 +48,7 @@ export function errorHandlerMiddleware(err: Error, req: Request, res: Response, 
 
     res.status(500).json({
         message: "Internal Server Error",
+        error: err.message,
     });
 }
 

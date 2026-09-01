@@ -8,9 +8,6 @@ export type RateLimitReturnType = {
     resetAfter: number;
 }
 
-export interface RateLimiter<TConfig> {
-    consume(
-        key: string,
-        config: TConfig
-    ): Promise<RateLimitReturnType>;
+export interface RateLimitAlgorithm<TPolicy> {
+    consume(key: string, policy: TPolicy): Promise<RateLimitReturnType>;
 }

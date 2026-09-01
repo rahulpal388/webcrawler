@@ -1,7 +1,6 @@
 
 import { APP_NAME, AUTH_EMAIL } from "@/config/config.js";
 import { EmailTemplate } from "@/types/emailTemplateTypes.js";
-import { ZodNull } from "zod";
 
 
 export interface LoginAlertEmailProps {
@@ -9,6 +8,7 @@ export interface LoginAlertEmailProps {
     deviceName: string | null;
     location: string | null;
     ipAddress: string | null;
+    supportEmail: string;
 };
 
 

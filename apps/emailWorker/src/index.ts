@@ -44,6 +44,7 @@ async function main() {
 
     // Process the message here
     // send the email
+    console.log(msg.payload)
     try {
       const response = await sendEmail(msg);
 

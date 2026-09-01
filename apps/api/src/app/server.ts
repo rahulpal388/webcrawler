@@ -2,7 +2,6 @@ import "dotenv/config";
 
 import { app, env } from "./app.js";
 
-import { connectDB } from "@repo/db/index";
 import { getRedisClient } from "@/infrastructure/redis/client.js";
 
 import { initilizeRedisStores } from "@/infrastructure/redis/stores.js";
@@ -10,7 +9,7 @@ import { initializeDatabse } from "@/infrastructure/db/connectDb.js";
 import { SessionService } from "@/shared/auth/session/session.service.js";
 import { OtpService } from "@/shared/auth/otp/otp.service.js";
 import geoIpService from "@/lib/getLocation.js";
-
+import { SlidingWindow } from "@repo/rate-limiter/algo/silidingWindow";
 
 
 
@@ -43,6 +42,7 @@ const dbClient = await initializeDatabse();
 export const sessionService = new SessionService(hashStore);
 export const otpService = new OtpService(hashStore);
 await geoIpService.initialize();
+export const slidingWindowRateLimit = new SlidingWindow(sortedSetStore);
 
 /*
 * HTTP server

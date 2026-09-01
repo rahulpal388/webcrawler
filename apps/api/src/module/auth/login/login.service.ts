@@ -17,19 +17,19 @@ export async function loginService(data: LoginEmailRequestType, sessionInfo: Ses
 
 
         if (!userInfo) {
-            throw new AppError("Invalid email or password", 401, { code: "AUTH_LOGIN_FAILED" });
+            throw new AppError("Invalid email or password", 401, { errorMessage: "No user exists with the provided credentials" });
         }
 
         const user = await authIdentityRepository.findByUserId(userInfo._id.toString(), "EMAIL");
 
         if (!user) {
-            throw new AppError("Invalid email or password", 401, { code: "AUTH_LOGIN_FAILED" });
+            throw new AppError("Invalid email or password", 401, { errorMessage: "No user exists with the provided credentials" });
         }
 
         const isPasswordValid = await hashService.verify(data.password, user.passwordHash!);
 
         if (!isPasswordValid) {
-            throw new AppError("Wrong password", 401, { code: "AUTH_LOGIN_FAILED" });
+            throw new AppError("Wrong password", 401, { errorMessage: "The provided password is incorrect" });
         }
 
         /* 
@@ -76,7 +76,7 @@ export async function loginService(data: LoginEmailRequestType, sessionInfo: Ses
             }
         }
     } catch (error) {
-        throw new AppError("Login failed", 500, { code: "AUTH_LOGIN_FAILED" });
+        throw new AppError("Login failed, no user exists with the provided credentials", 401, { errorMessage: error instanceof Error ? error.message : "Unknown error" });
     }
 }
 

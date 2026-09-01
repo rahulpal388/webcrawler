@@ -5,7 +5,7 @@ import { Schema } from "mongoose";
 
 
 const userSchemaDefination: SchemaOf<UserSchemaType> = {
-    name: { type: String, required: true, unique: true },
+    name: { type: String, required: true },
     avatar: { type: String, default: null },
     email: { type: String, required: true, unique: true },
     emailVerified: { type: Boolean, default: false },

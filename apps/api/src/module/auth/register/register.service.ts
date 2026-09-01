@@ -55,7 +55,7 @@ async function registerUser(data: RegisterEmailRequestType) {
     */
 
     await emailPublisher.enqueue({
-        event: randomUUID(),
+        eventId: randomUUID(),
         type: "otp",
         payload: {
             username: data.name,
@@ -126,6 +126,8 @@ async function verifyUserOtp(verificationId: string, userOtp: string, sessionInf
             return user;
         })
 
+        console.log("newUser: ", newUser)
+
         // create a session for the user after successful OTP verification
         const sessionId = await sessionService.create({
             userId: newUser._id.toString(),
@@ -137,7 +139,7 @@ async function verifyUserOtp(verificationId: string, userOtp: string, sessionInf
 
         // send welcome email to user
         await emailPublisher.enqueue({
-            event: randomUUID(),
+            eventId: randomUUID(),
             type: "welcome",
             payload: {
                 email: newUser.email,
@@ -160,9 +162,13 @@ async function verifyUserOtp(verificationId: string, userOtp: string, sessionInf
             }
         }
 
-    } catch {
-        await mongoSession.abortTransaction();
-        throw new AppError("DB failed to create user after OTP verification", 500, { code: "AUTH_REGISTER_FAILED" });
+    } catch (error) {
+        throw new AppError(
+            "DB failed to create user after OTP verification",
+            500,
+            {
+                errorMessage: error instanceof Error ? error.message : "Unknown error"
+            });
     } finally {
         await mongoSession.endSession();
 

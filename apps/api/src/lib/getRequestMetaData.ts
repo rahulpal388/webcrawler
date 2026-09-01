@@ -16,7 +16,11 @@ export async function getRequestMetadata(
 
     const userAgent = req.get("user-agent") ?? null;
 
-    const ipAddress = req.ip ?? null;
+    /* TODO :
+    *   Remove this hard coded ip address
+    */
+    // const ipAddress = req.ip ?? null;
+    const ipAddress = " 172.30.144.1";
 
     if (!ipAddress) {
         return {

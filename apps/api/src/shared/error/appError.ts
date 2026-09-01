@@ -1,24 +1,25 @@
 export type AppErrorOptions = {
-    code?: string;
-    cause?: unknown;
+    errorMessage: string;
     details?: Record<string, unknown>;
 };
 
 export class AppError extends Error {
     public readonly statusCode: number;
-    public readonly code: string;
+    public readonly errorMessage: string;
     public readonly details?: Record<string, unknown>;
 
     constructor(
         message: string,
         statusCode: number,
-        options: AppErrorOptions = {},
+        options: AppErrorOptions = {
+            errorMessage: "An unexpected error occurred"
+        },
     ) {
-        super(message, { cause: options.cause });
+        super(message,);
 
         this.name = "AppError";
         this.statusCode = statusCode;
-        this.code = options.code ?? "INTERNAL_SERVER_ERROR";
+        this.errorMessage = options.errorMessage;
         this.details = options.details;
 
         Error.captureStackTrace(this, AppError);

@@ -7,7 +7,7 @@ import Mail from "@/utils/mail.js";
 import { WelcomeTemplate } from "./welcome.js";
 
 
-export async function sendWelcomeMail(msg: EmailStreamMessageType<EmailType.WELCOME>) {
+export async function sendWelcomeMail(msg: EmailStreamMessageType<"welcome">) {
 
     const emailPayload = {
         displayName: msg.payload.name,

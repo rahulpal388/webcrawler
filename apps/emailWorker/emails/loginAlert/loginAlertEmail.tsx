@@ -16,6 +16,7 @@ export default function LoginAlertEmail({
   deviceName,
   location,
   ipAddress,
+  supportEmail,
 }: LoginAlertEmailProps) {
   const displayDevice = deviceName?.trim() || "Unknown device";
   const displayLocation = location?.trim() || "Location not available";
@@ -269,14 +270,14 @@ export default function LoginAlertEmail({
             >
               Need help? Contact our support team at{" "}
               <a
-                href="mailto:support@crawllytics.com"
+                href={`mailto:${supportEmail}`}
                 style={{
                   color: "#fe4f00",
                   textDecoration: "none",
                   fontWeight: 500,
                 }}
               >
-                support@crawllytics.com
+                {supportEmail}
               </a>
               .
             </Text>
