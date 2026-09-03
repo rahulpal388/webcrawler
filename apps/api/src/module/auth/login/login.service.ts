@@ -76,7 +76,7 @@ export async function loginService(data: LoginEmailRequestType, sessionInfo: Ses
             }
         }
     } catch (error) {
-        throw new AppError("Login failed, no user exists with the provided credentials", 401, { errorMessage: error instanceof Error ? error.message : "Unknown error" });
+        throw new AppError(error instanceof AppError ? error.message : "Login failed", 401, { errorMessage: error instanceof Error ? error.message : "Unknown error" });
     }
 }
 

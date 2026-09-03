@@ -1,19 +1,21 @@
 
 
 import z from "zod";
+import { passwordSchema } from "./common/password.schema.js";
 
 
+export const MIN_OTP_LENGTH = 6;
 
 
 export const registerEmailRequestSchema = z.object({
     name: z.string(),
     email: z.string(),
-    password: z.string().min(8).max(20),
+    password: passwordSchema
 });
 
 export const verifyRegistrationOTPRequestSchema = z.object({
     verificationId: z.string(),
-    otp: z.string().length(6),
+    otp: z.string().length(MIN_OTP_LENGTH, `OTP must be ${MIN_OTP_LENGTH} characters long`),
 });
 
 

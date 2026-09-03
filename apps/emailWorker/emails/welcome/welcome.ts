@@ -1,5 +1,5 @@
 import { EmailTemplate } from "@/types/emailTemplateTypes.js";
-import { ACCOUNT_EMAIL } from "@/config/config.js";
+import { EMAIL_URL } from "@/config/config.js";
 
 
 export interface WelcomeEmailProps {
@@ -9,7 +9,7 @@ export interface WelcomeEmailProps {
 }
 
 export const WelcomeTemplate: EmailTemplate = {
-  from: `SEO Analyzer <${ACCOUNT_EMAIL}>`,
+  from: `SEO Analyzer <${EMAIL_URL.DEFAULT}>`,
   subject: "Welcome to SEO Analyzer",
 };
 

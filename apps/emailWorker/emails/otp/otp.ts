@@ -1,6 +1,6 @@
 import OTPEmail from "./otpEmail.js";
 import { EmailTemplate } from "@/types/emailTemplateTypes.js";
-import { APP_NAME, AUTH_EMAIL } from "@/config/config.js";
+import { APP_NAME, EMAIL_URL, } from "@/config/config.js";
 
 export interface OTPEmailProps {
   username: string;
@@ -11,7 +11,7 @@ export interface OTPEmailProps {
 }
 
 export const OTPTemplate: EmailTemplate = {
-  from: `${APP_NAME} <${AUTH_EMAIL}>`,
+  from: `${APP_NAME} <${EMAIL_URL.AUTH}>`,
   subject: "Crawllytics verification code",
 };
 

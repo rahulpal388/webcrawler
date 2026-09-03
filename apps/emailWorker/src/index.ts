@@ -47,11 +47,7 @@ async function main() {
     console.log(msg.payload)
     try {
       const response = await sendEmail(msg);
-
-      if (!response) {
-        throw new Error("Error sending email");
-      }
-
+      console.log("Email sent successfully", response);
       logger.info({
         requestId: msg.eventId,
         message: "Email sent successfully",
@@ -59,9 +55,9 @@ async function main() {
       })
     } catch (error) {
       logger.error({
-        requestId: "<Request-Id>",
-        message: "Error Sending email",
-        path: ".",
+        requestId: msg.eventId,
+        message: error instanceof Error ? error.message : "unknown error",
+        path: "."
       });
     }
   }

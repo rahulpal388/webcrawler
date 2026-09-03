@@ -7,7 +7,12 @@ export function mail() {
   };
 
   async function send(options: CreateEmailOptions) {
-    return resend.emails.send(options);
+    const response = await resend.emails.send(options);
+    if (response.error) {
+      throw new Error(response.error.message);
+    }
+
+    return response;
   }
 }
 

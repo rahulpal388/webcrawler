@@ -4,7 +4,7 @@ import { createElement } from "react";
 import { LoginAlertEmailProps, LoginAlertTemplate } from "./loginAlert.js";
 import LoginAlertEmail from "./loginAlertEmail.js";
 import Mail from "@/utils/mail.js";
-import { SUPPORT_EMAIL } from "@/config/config.js";
+import { EMAIL_URL } from "@/config/config.js";
 
 
 
@@ -15,7 +15,7 @@ export async function sendLoginAlertMail(msg: EmailStreamMessageType<"login_aler
         deviceName: msg.payload.deviceName,
         location: msg.payload.location,
         ipAddress: msg.payload.ipAddress,
-        supportEmail: SUPPORT_EMAIL,
+        supportEmail: EMAIL_URL.SUPPORT,
     }
 
     const html = await render(createElement(LoginAlertEmail, emailPayload));

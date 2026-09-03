@@ -1,6 +1,5 @@
 import {
   Body,
-  Button,
   Container,
   Head,
   Heading,
@@ -10,23 +9,17 @@ import {
   Text,
 } from "@react-email/components";
 
-import { PasswordResetEmailProps } from "./passwordReset.js";
+import { PasswordResetConfirmationEmailProps } from "./password-reset-confirmation.js";
 
-export default function PasswordResetEmail({
+export default function PasswordResetConfirmationEmail({
   name,
-  url,
-  expireIn,
   appName,
-}: PasswordResetEmailProps) {
-  const expirationText = expireIn === 1 ? "1 minute" : `${expireIn} minutes`;
-
+}: PasswordResetConfirmationEmailProps) {
   return (
     <Html>
       <Head />
 
-      <Preview>
-        Reset your {appName} password. This link expires in {expirationText}.
-      </Preview>
+      <Preview>Your {appName} password has been successfully reset.</Preview>
 
       <Body
         style={{
@@ -99,7 +92,7 @@ export default function PasswordResetEmail({
                 color: "#111827",
               }}
             >
-              Reset your password
+              Your password has been reset
             </Heading>
 
             <Text
@@ -122,89 +115,42 @@ export default function PasswordResetEmail({
                 color: "#4b5563",
               }}
             >
-              We received a request to reset your {appName} password. Click the button below to
-              choose a new password.
+              Your {appName} password has been successfully reset. You can now sign in using your
+              new password.
             </Text>
 
-            {/* Reset button */}
-            <Section
-              style={{
-                margin: "0 0 24px",
-                textAlign: "center",
-              }}
-            >
-              <Button
-                href={url}
-                style={{
-                  display: "inline-block",
-                  padding: "12px 24px",
-                  backgroundColor: "#111827",
-                  borderRadius: "8px",
-                  color: "#ffffff",
-                  fontSize: "14px",
-                  lineHeight: "20px",
-                  fontWeight: 600,
-                  textDecoration: "none",
-                }}
-              >
-                Reset your password
-              </Button>
-            </Section>
-
-            {/* Expiration */}
-            <Text
-              style={{
-                margin: "0 0 28px",
-                textAlign: "center",
-                fontSize: "13px",
-                lineHeight: "20px",
-                color: "#6b7280",
-              }}
-            >
-              This password reset link expires in{" "}
-              <strong
-                style={{
-                  fontWeight: 600,
-                  color: "#374151",
-                }}
-              >
-                {expirationText}
-              </strong>
-              .
-            </Text>
-
-            {/* Fallback link */}
+            {/* Success message */}
             <Section
               style={{
                 margin: "0 0 28px",
-                padding: "16px",
-                backgroundColor: "#f9fafb",
-                border: "1px solid #e5e7eb",
+                padding: "20px",
+                backgroundColor: "#f0fdf4",
+                border: "1px solid #bbf7d0",
                 borderRadius: "8px",
+                textAlign: "center",
               }}
             >
               <Text
                 style={{
-                  margin: "0 0 8px",
-                  fontSize: "12px",
-                  lineHeight: "18px",
-                  color: "#6b7280",
+                  margin: "0 0 6px",
+                  fontSize: "14px",
+                  lineHeight: "20px",
+                  fontWeight: 600,
+                  color: "#166534",
                 }}
               >
-                If the button above doesn't work, copy and paste the following link into your
-                browser:
+                Password reset successful
               </Text>
 
               <Text
                 style={{
                   margin: 0,
-                  fontSize: "12px",
-                  lineHeight: "18px",
-                  wordBreak: "break-all",
-                  color: "#374151",
+                  fontSize: "13px",
+                  lineHeight: "20px",
+                  color: "#15803d",
                 }}
               >
-                {url}
+                Your old password can no longer be used to sign in.
               </Text>
             </Section>
 
@@ -225,8 +171,8 @@ export default function PasswordResetEmail({
                   color: "#9a3412",
                 }}
               >
-                If you didn't request a password reset, you can safely ignore this email. Your
-                password will not be changed unless you use the reset link.
+                If you did not reset your password, your account may be at risk. Please secure your
+                account immediately and contact our support team.
               </Text>
             </Section>
           </Section>

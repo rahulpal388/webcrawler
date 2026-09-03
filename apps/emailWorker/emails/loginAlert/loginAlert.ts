@@ -1,5 +1,5 @@
 
-import { APP_NAME, AUTH_EMAIL } from "@/config/config.js";
+import { APP_NAME, EMAIL_URL } from "@/config/config.js";
 import { EmailTemplate } from "@/types/emailTemplateTypes.js";
 
 
@@ -15,6 +15,6 @@ export interface LoginAlertEmailProps {
 
 
 export const LoginAlertTemplate: EmailTemplate = {
-    from: `${APP_NAME} <${AUTH_EMAIL}>`,
+    from: `${APP_NAME} <${EMAIL_URL.DEFAULT}>`,
     subject: "Crawllytics login alert",
 };

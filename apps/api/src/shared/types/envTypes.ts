@@ -9,7 +9,7 @@ export const envSchema = globalEnv.extend({
   GOOGLE_CLIENT_SECRET: z.string(),
   API_BASE_PATH: z.string(),
   API_ORIGIN: z.string(),
-  REDIRECT_URL: z.string(),
+  APP_URL: z.string(),
   COOKIE_DOMAIN: z.string(),
 });
 

@@ -4,8 +4,8 @@ import { verifyRegistrationOTPController } from "@/module/auth/register/verifyRe
 import { logoutController } from "@/module/auth/logout/logout.controller.js";
 import { Router } from "express";
 import { loginRateLimit, registerRateLimit, verifyOtpRateLimit } from "@/module/auth/authRateLimit.js";
-import { slidingWindowRateLimit } from "@/app/server.js";
-
+import { forgetPasswordController } from "@/module/auth/forget-password/forget-password.controller.js";
+import { verifyForgetPasswordController } from "@/module/auth/forget-password/verify-forget-password.controller.js";
 
 
 const authRouter = Router();
@@ -16,6 +16,9 @@ const authRouter = Router();
 authRouter.post("/login", loginRateLimit, loginController);
 authRouter.post("/register", registerRateLimit, registerController);
 authRouter.post("/register/verify-otp", verifyOtpRateLimit, verifyRegistrationOTPController);
+
+authRouter.post("/password-reset", forgetPasswordController);
+authRouter.post("/password-reset/verify", verifyForgetPasswordController);
 
 
 //  logout user

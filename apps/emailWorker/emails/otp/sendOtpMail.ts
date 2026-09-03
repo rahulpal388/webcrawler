@@ -1,4 +1,4 @@
-import { APP_NAME, SUPPORT_EMAIL } from "@/config/config.js";
+import { APP_NAME, EMAIL_URL } from "@/config/config.js";
 import { render } from "@react-email/render";
 import { EmailStreamMessageType, } from "@repo/redis/types/emailStreamMessageType";
 import { createElement } from "react";
@@ -14,8 +14,8 @@ export async function sendOTPMail(msg: EmailStreamMessageType<"otp">) {
         username: msg.payload.username,
         appName: APP_NAME,
         otp: msg.payload.otp,
-        expiresInMinutes: msg.payload.expireIn,
-        supportEmail: SUPPORT_EMAIL,
+        expiresInMinutes: msg.payload.expireIn / 60,
+        supportEmail: EMAIL_URL.SUPPORT,
     };
     const html = await render(createElement(OTPEmail, emailPayload));
 

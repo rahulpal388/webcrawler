@@ -3,6 +3,7 @@ export const EmailTypes = {
   PASSWORD_RESET: "password_reset",
   LOGIN_ALERT: "login_alert",
   OTP: "otp",
+  PASSWORD_CHANGE_CONFIRMATION: "password_change_confirmation"
 } as const;
 
 export type EmailType =
@@ -27,6 +28,7 @@ interface EmailPayloadMap {
   [EmailTypes.OTP]: OtpPayload;
   [EmailTypes.PASSWORD_RESET]: PasswordResetPayload;
   [EmailTypes.LOGIN_ALERT]: LoginAlertPayload;
+  [EmailTypes.PASSWORD_CHANGE_CONFIRMATION]: PasswordChangeConfirmationPayload;
 }
 
 interface WelcomePayload {
@@ -37,8 +39,8 @@ interface WelcomePayload {
 interface PasswordResetPayload {
   email: string;
   name: string;
+  url: string;
   expireIn: number;
-  otp: string;
 }
 
 interface LoginAlertPayload {
@@ -56,3 +58,9 @@ interface OtpPayload {
   expireIn: number;
 }
 
+
+
+interface PasswordChangeConfirmationPayload {
+  email: string;
+  name: string;
+}

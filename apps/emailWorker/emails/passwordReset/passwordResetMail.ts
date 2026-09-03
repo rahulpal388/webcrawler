@@ -10,9 +10,9 @@ import { APP_NAME } from "@/config/config.js";
 
 export async function passwordResetMail(msg: EmailStreamMessageType<"password_reset">) {
     const emailPayload = {
-        username: msg.payload.name,
-        otp: msg.payload.otp,
-        expireIn: msg.payload.expireIn,
+        name: msg.payload.name,
+        url: msg.payload.url,
+        expireIn: msg.payload.expireIn / 60,
         appName: APP_NAME,
     }
 

@@ -61,7 +61,7 @@ async function registerUser(data: RegisterEmailRequestType) {
             username: data.name,
             email: data.email,
             otp: otp,
-            expireIn: OTP_EXPIRY["EMAIL_VERIFICATION"] / 60, // convert seconds to minutes
+            expireIn: OTP_EXPIRY["EMAIL_VERIFICATION"],
         },
         createdAt: new Date(),
     })

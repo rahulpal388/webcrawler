@@ -1,11 +1,14 @@
-import { env } from "@/index.js";
 
-export const DOMAIN = "beatroom.space";
+export const DOMAIN = "mail.crawllytics.dev";
 
-export const APP_NAME = "Cryallitic";
-export const SUPPORT_EMAIL = `support@${DOMAIN}`;
+export const APP_NAME = "Crawllytics";
 
-export const AUTH_EMAIL = `auth@${DOMAIN}`;
-export const ACCOUNT_EMAIL = `accounts@${DOMAIN}`;
+
+export const EMAIL_URL = {
+    DEFAULT: `no-reply@${DOMAIN}`,
+    SUPPORT: `support@${DOMAIN}`,
+    AUTH: `auth@${DOMAIN}`,
+} as const;
+
 
 export const DASHBOARD_URL = `https://${DOMAIN}/projects` 

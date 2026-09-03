@@ -1,4 +1,4 @@
-import { DASHBOARD_URL, SUPPORT_EMAIL } from "@/config/config.js";
+import { DASHBOARD_URL, EMAIL_URL } from "@/config/config.js";
 import { render } from "@react-email/render";
 import { EmailStreamMessageType, EmailType } from "@repo/redis/types/emailStreamMessageType";
 import { createElement } from "react";
@@ -12,7 +12,7 @@ export async function sendWelcomeMail(msg: EmailStreamMessageType<"welcome">) {
     const emailPayload = {
         displayName: msg.payload.name,
         dashboardUrl: DASHBOARD_URL,
-        supportEmail: SUPPORT_EMAIL,
+        supportEmail: EMAIL_URL.SUPPORT,
     };
 
     const html = await render(createElement(WelcomeEmail, emailPayload));
