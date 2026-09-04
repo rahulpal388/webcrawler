@@ -26,6 +26,8 @@ export function RateLimitMiddleware<TPolicy>(
             }
         }
 
+        console.log("Rate limit passed for all rules");
+
         next();
 
     }

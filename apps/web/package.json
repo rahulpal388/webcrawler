@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@repo/redis": "*",
+    "@repo/contracts": "*",
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
     "@types/node": "^22.15.3",

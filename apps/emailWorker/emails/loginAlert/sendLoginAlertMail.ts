@@ -18,13 +18,15 @@ export async function sendLoginAlertMail(msg: EmailStreamMessageType<"login_aler
         supportEmail: EMAIL_URL.SUPPORT,
     }
 
+
+
     const html = await render(createElement(LoginAlertEmail, emailPayload));
 
 
     return await Mail.send({
-        from: "Crawllytics <auth@beatroom.space>",
-        to: "rahulschoolmail59@gmail.com",
-        subject: "Crawllytics login alert",
-        text: "A new login was detected on your Crawllytics account.",
+        from: LoginAlertTemplate.from,
+        to: msg.payload.email,
+        subject: LoginAlertTemplate.subject,
+        html: html,
     });
 }

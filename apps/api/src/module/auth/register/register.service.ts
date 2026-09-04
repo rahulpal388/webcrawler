@@ -126,7 +126,6 @@ async function verifyUserOtp(verificationId: string, userOtp: string, sessionInf
             return user;
         })
 
-        console.log("newUser: ", newUser)
 
         // create a session for the user after successful OTP verification
         const sessionId = await sessionService.create({

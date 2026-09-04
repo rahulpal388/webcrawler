@@ -19,5 +19,22 @@ export const authRateLimitPolicies = {
     verifyOtp: {
         limit: 5,
         windowMs: 15 * 60 * 1000,
+    },
+    forgetPassword: {
+        limit: 5,
+        windowMs: 15 * 60 * 1000,
+    },
+    verifyForgetPassword: {
+        limit: 5,
+        windowMs: 15 * 60 * 1000,
+
+    },
+    googleLogin: {
+        limit: 5,
+        windowMs: 15 * 60 * 1000,
+    },
+    verifyGoogleLogin: {
+        limit: 5,
+        windowMs: 15 * 60 * 1000,
     }
 } satisfies Record<string, SlidingWindowPolicyType>

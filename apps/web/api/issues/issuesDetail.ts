@@ -1,7 +1,7 @@
-import { IssuesInfoResponseType } from "@repo/contract/types/apiResponseType/issuesTypes";
-import { apiClient } from "../apiClient";
-import { issuesInfoTempData } from "@repo/contract/constant/responseConstant/issues/issuesInfoTempData";
 
+
+import { issuesInfoTempData } from "@repo/contracts/constant/responseConstant/issues/issuesInfoTempData"
+import { IssuesInfoResponseType } from "@repo/contracts/types/apiResponseType/issuesTypes";
 
 
 

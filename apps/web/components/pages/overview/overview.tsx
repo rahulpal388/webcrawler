@@ -1,4 +1,3 @@
-import { overviewTempData } from "@repo/contract/constant/responseConstant/pages/overviewTempdata";
 import {
   pageOverviewURLInfoLabels,
   pageOverviewHTTPHeaderLabels,
@@ -8,6 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import { PageQueries } from "../../../queries/pages.queries";
 import { Loader } from "@repo/ui/components/loader";
 import { OverviewDropDownContents } from "./overvieDropDownContents";
+import { overviewTempData } from "@repo/contracts/constant/responseConstant/pages/overviewTempdata";
 
 export function Overview() {
   const { data } = useQuery(PageQueries.getOverview());
@@ -46,4 +46,3 @@ export function Overview() {
     </div>
   );
 }
-

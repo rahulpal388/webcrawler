@@ -40,8 +40,8 @@ export class SessionService {
                 SESSION_EXPIRATION_TIME
             )
             return sessionId;
-        } catch {
-            throw new AppError("Failed to create session", 500, { code: "SESSION_CREATION_FAILED" });
+        } catch (error) {
+            throw new AppError("Failed to create session", 500, { errorMessage: error instanceof Error ? error.message : "Unknown error" });
         }
     }
 

@@ -1,6 +1,6 @@
 
 
-export type RateLimiterKeyDimension = "ip" | "email";
+export type RateLimiterKeyDimension = "ip" | "email" | "token";
 interface CreateRateLimiterKeyOptions {
     resource: string;
     action: string;

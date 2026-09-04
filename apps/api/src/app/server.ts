@@ -10,6 +10,7 @@ import { SessionService } from "@/shared/auth/session/session.service.js";
 import { OtpService } from "@/shared/auth/otp/otp.service.js";
 import geoIpService from "@/lib/getLocation.js";
 import { SlidingWindow } from "@repo/rate-limiter/algo/silidingWindow";
+import { GoogleService } from "@/module/auth/google/google.service.js";
 
 
 
@@ -20,7 +21,7 @@ import { SlidingWindow } from "@repo/rate-limiter/algo/silidingWindow";
 const redisClient = await getRedisClient();
 
 export const {
-    crawlStateSt,
+    setStore,
     crawlPublisher,
     emailPublisher,
     urlDeDuplicationStore,
@@ -43,6 +44,8 @@ export const sessionService = new SessionService(hashStore);
 export const otpService = new OtpService(hashStore);
 await geoIpService.initialize();
 export const slidingWindowRateLimit = new SlidingWindow(sortedSetStore);
+
+export const googleAuthService = await GoogleService.create();
 
 /*
 * HTTP server

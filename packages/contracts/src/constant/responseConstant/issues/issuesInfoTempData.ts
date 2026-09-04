@@ -10,7 +10,7 @@ export const issuesInfoTempData: IssuesInfoResponseType[] = [
 
         title: "Missing Meta Descriptions",
 
-        severity: "high",
+        severity: "critical",
 
         category: "metadata",
 
@@ -230,7 +230,7 @@ export default function Page() {
 
         title: "Duplicate Title Tags",
 
-        severity: "high",
+        severity: "critical",
 
         category: "metadata",
 
@@ -409,7 +409,7 @@ export default function AuditPage() {
 
         title: "Missing H1 Heading",
 
-        severity: "high",
+        severity: "critical",
 
         category: "content",
 
@@ -573,7 +573,7 @@ export default function AuditPage() {
 
         title: "Broken Internal Links",
 
-        severity: "high",
+        severity: "critical",
 
         category: "crawlability",
 

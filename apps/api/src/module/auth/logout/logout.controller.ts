@@ -14,7 +14,7 @@ export async function logoutController(req: Request, res: Response) {
         throw new AppError("invalid request", 401);
     }
 
-    //  might delete or mark un-active in loginActivity model
+    //  TODO : might delete or mark un-active in loginActivity model
 
 
     // delete the session from redis

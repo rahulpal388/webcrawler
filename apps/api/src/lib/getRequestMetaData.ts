@@ -20,7 +20,7 @@ export async function getRequestMetadata(
     *   Remove this hard coded ip address
     */
     // const ipAddress = req.ip ?? null;
-    const ipAddress = " 172.30.144.1";
+    const ipAddress = "106.221.231.129"
 
     if (!ipAddress) {
         return {
