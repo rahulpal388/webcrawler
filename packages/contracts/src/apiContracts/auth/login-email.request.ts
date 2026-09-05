@@ -1,10 +1,12 @@
 import z from "zod";
+import { emailSchema } from "./common/email-schema.js";
+import { passwordSchema } from "./common/password.schema.js";
 
 
 
 export const loginEmailRequestSchema = z.object({
-    email: z.string(),
-    password: z.string().min(8).max(20),
+    email: emailSchema,
+    password: passwordSchema
 });
 
 

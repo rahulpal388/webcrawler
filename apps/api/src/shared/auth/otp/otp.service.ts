@@ -49,13 +49,13 @@ export class OtpService {
 
         if (!storedData) {
 
-            throw new AppError("OTP not found or expired", 400, { code: "AUTH_OTP_NOT_FOUND" });
+            throw new AppError("OTP not found or expired", 400,);
         }
 
         const isOtpValid = await hashService.verify(userOtp, storedData.otp);
 
         if (!isOtpValid) {
-            throw new AppError("Invalid OTP", 400, { code: "AUTH_OTP_INVALID" });
+            throw new AppError("Invalid OTP", 400);
         }
 
         await this.hashStore.deleteByKey(key);

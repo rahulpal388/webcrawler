@@ -7,10 +7,10 @@ import UserAgentSchema from "./userAgentSchema.js";
 
 
 const projectSchemaDefination: SchemaOf<ProjectSchemaType> = {
+    userId: { type: mongoose.Schema.Types.ObjectId, required: true, ref: "User" },
     projectName: { type: String, required: true },
-    url: { type: String, required: true },
-    robotsTxt: [{ type: UserAgentSchema, default: [{ userAgent: [], allow: [], disallow: [] }] }],
-    siteMapUrls: [{ type: String, default: [] }],
+    domain: { type: String, required: true },
+    createdAt: { type: Date, default: Date.now }
 }
 
 

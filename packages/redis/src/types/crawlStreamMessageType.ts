@@ -1,4 +1,3 @@
-import { RobotsTxtType } from "@repo/contract/types/robotsTxtType";
 
 export type CrawlStreamMessageType = {
   _id: string;

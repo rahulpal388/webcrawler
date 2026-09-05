@@ -1,11 +1,10 @@
-import { UserAgentType } from "../../../../contracts/src/robotTxt.contracts.js";
-
+import mongoose from "mongoose";
 
 
 
 export type ProjectSchemaType = {
+    userId: mongoose.Types.ObjectId;
     projectName: string;
-    url: string;
-    robotsTxt: UserAgentType[];
-    siteMapUrls: string[];
+    domain: string;
+    createdAt: Date;
 }

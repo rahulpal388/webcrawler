@@ -7,10 +7,12 @@ export enum ReportType {
     SEO_AUDIT = "seo_audit"
 }
 
-export enum ReportFormat {
-    PDF = "pdf",
-    CSV = "csv"
-}
+export const ReportFormat = {
+    PDF: "pdf",
+    CSV: "csv"
+} as const;
+
+export type ReportFormatType = typeof ReportFormat[keyof typeof ReportFormat];
 
 export enum ReportStatus {
     PENDING = "pending",
@@ -26,7 +28,7 @@ export type ReportSchemaType = {
 
     type: ReportType;
 
-    format: ReportFormat;
+    format: ReportFormatType;
 
     status: ReportStatus;
 
